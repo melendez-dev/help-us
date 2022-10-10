@@ -1,5 +1,6 @@
 {
   "name": "help-us",
+	"author": "melendez-dev and Santylol1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +10,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.8",
+    "axios": "^1.1.2",
+    "emailjs": "^4.0.1",
+    "framer-motion": "^7.5.3",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.37.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "(useMyCustomHook|useMyOtherCustomHook)"
+      }
+    ]
   }
 }
