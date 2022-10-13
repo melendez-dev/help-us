@@ -1,14 +1,10 @@
-import { TextField, Box, Typography, Button } from "@mui/material";
-import { IconSex } from "../src/assest/icons/config";
+import Layout from "../src/components/shared/Layout/Layout";
 export default function Home() {
   return (
-    <Box
-      style={{
-        backgroundColor: "#000000",
-        padding: "20px",
-      }}
-    >
-      <IconSex />
-    </Box>
+    <div>
+      <Layout isContainer={true}>
+        <div>this is a boyd</div>
+      </Layout>
+    </div>
   );
 }
