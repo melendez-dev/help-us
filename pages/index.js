@@ -1,8 +1,8 @@
-import { TextField, Box } from '@mui/material';
+import { TextField, Box, Typography, Button } from "@mui/material";
 export default function Home() {
-	return (
-		<Box>
-			here is the home page
-		</Box>
-  )
+  return (
+    <Box>
+      <Button variant="text-line">Contained</Button>
+    </Box>
+  );
 }
