@@ -82,6 +82,24 @@ export const theme = createTheme({
     MuiTypography: {
       variants: [
         {
+          props: { variant: "logo" },
+          style: {
+            fontWeight: 900,
+            fontSize: "27px",
+            lineHeight: "27px",
+            letterSpacing: "1px",
+          },
+        },
+        {
+          props: { variant: "logo-small" },
+          style: {
+            fontWeight: 900,
+            fontSize: "20px",
+            lineHeight: "27px",
+            letterSpacing: "1px",
+          },
+        },
+        {
           props: { variant: "h1-bold" },
           style: {
             fontWeight: 600,
@@ -161,6 +179,14 @@ export const theme = createTheme({
             lineHeight: "24px",
           },
         },
+        {
+          props: { variant: "p-small" },
+          style: {
+            fontWeight: 400,
+            fontSize: "14px",
+            lineHeight: "21px",
+          },
+        },
       ],
     },
   },
@@ -174,10 +200,10 @@ export const theme = createTheme({
     secondary: {
       main: colors.secondary,
     },
-    thirth: {
+    error: {
       main: colors.thirth,
     },
-    fourth: {
+    success: {
       main: colors.fourth,
     },
   },

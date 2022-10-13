@@ -1,8 +1,10 @@
-import { TextField, Box, Typography, Button } from "@mui/material";
+import Layout from "../src/components/shared/Layout/Layout";
 export default function Home() {
   return (
-    <Box>
-      <Button variant="text-line">Contained</Button>
-    </Box>
+    <div>
+      <Layout isContainer={true}>
+        <div>this is a boyd</div>
+      </Layout>
+    </div>
   );
 }
