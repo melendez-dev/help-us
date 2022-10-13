@@ -179,6 +179,14 @@ export const theme = createTheme({
             lineHeight: "24px",
           },
         },
+        {
+          props: { variant: "p-small" },
+          style: {
+            fontWeight: 400,
+            fontSize: "14px",
+            lineHeight: "21px",
+          },
+        },
       ],
     },
   },
@@ -192,10 +200,10 @@ export const theme = createTheme({
     secondary: {
       main: colors.secondary,
     },
-    thirth: {
+    error: {
       main: colors.thirth,
     },
-    fourth: {
+    success: {
       main: colors.fourth,
     },
   },
