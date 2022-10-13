@@ -82,6 +82,24 @@ export const theme = createTheme({
     MuiTypography: {
       variants: [
         {
+          props: { variant: "logo" },
+          style: {
+            fontWeight: 900,
+            fontSize: "27px",
+            lineHeight: "27px",
+            letterSpacing: "1px",
+          },
+        },
+        {
+          props: { variant: "logo-small" },
+          style: {
+            fontWeight: 900,
+            fontSize: "20px",
+            lineHeight: "27px",
+            letterSpacing: "1px",
+          },
+        },
+        {
           props: { variant: "h1-bold" },
           style: {
             fontWeight: 600,
