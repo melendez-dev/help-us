@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 export default function CardWithIcon({
   icon,
   title,
@@ -11,24 +11,26 @@ export default function CardWithIcon({
       style={{
         background: background,
 				height: height,
+        borderRadius: "12px",
+        marginTop: "30px",
       }}
     >
       <Grid container spacing={1}>
-        <Grid item xs={3}>
+        <Grid style={{textAlign: "Right"}} item xs={3}>
           {icon}
         </Grid>
         <Grid item xs={1}>
           <Box
             style={{
-              width: "1px",
+              width: "2px",
               height: "100%",
               background: "#fff",
             }}
           />
         </Grid>
         <Grid item xs={8}>
-          <Box>{title}</Box>
-          <Box>{desc}</Box>
+          <Box><Typography variant="p-bold" color="#F3F3F3"> {title}</Typography></Box>
+          <Box><Typography color="#F3F3F3"> {desc}</Typography></Box>
         </Grid>
       </Grid>
     </Box>
