@@ -1,7 +1,7 @@
-import { TextField, Box, Typography, Button, Container } from "@mui/material";
+import { TextField, Box, Typography, Button, Container, Card, Grid } from "@mui/material";
 export default function AboutUs() {
   return (
-    <Container>
+
       <Box>
         <Box>
           <Typography variant="h2-bold" color="secondary">
@@ -50,6 +50,44 @@ export default function AboutUs() {
           </Typography>
         </Box>
 
+        <Box>
+        <Card>
+          <Grid container spacing="1"
+        style={{
+        display: "flex",
+        flexDirection: "row",
+        textAlign: "center",
+        alignItems: "center",
+        background: "#D8705D",
+        height: "264px",
+        position: "relative"
+      }} >
+        
+        <Grid item xs={6}>
+          <Box><Typography variant="h1-bold" color="#f3f3f3">Misión</Typography></Box>
+          <Box><Typography variant="p" color="#f3f3f3">Nuestra misión fundamental es a través de la vivienda digna y un ambiente sano contribiur en la meojr de la calidad de vida de las familias que impactamos.</Typography></Box>
+        </Grid>
+
+
+        <Grid item xs={2}>
+          <Box style={{
+              width: "4px",
+              height: "150px",
+              background: "#fff",
+            }}></Box></Grid>
+
+
+        <Grid item xs={4}>
+        <Box><Typography variant="h1-bold" color="#f3f3f3">Visión</Typography></Box>
+          <Box><Typography variant="p" color="#f3f3f3">Nuestra visión es generar impacto con nuestras actuaciones en el bienestar y el desarrollo de la comunidad con la que trabajamos y ser reconocidos por nuestra integridad en el modo de actuar.</Typography></Box>
+        </Grid>
+
+
+
+          </Grid>
+        </Card>
+
+        </Box>
         
         <Box>
         <Box mt={3}><Typography variant="h2-bold" color="secondary">
@@ -92,6 +130,6 @@ export default function AboutUs() {
 
 
       </Box>
-    </Container>
+
   );
 }
