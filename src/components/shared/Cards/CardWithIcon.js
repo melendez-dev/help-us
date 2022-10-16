@@ -10,13 +10,13 @@ export default function CardWithIcon({
     <Box
       style={{
         background: background,
-				height: height,
+        height: height,
         borderRadius: "12px",
         marginTop: "30px",
       }}
     >
       <Grid container spacing={1}>
-        <Grid style={{textAlign: "Right"}} item xs={3}>
+        <Grid style={{  textAlign: "Right" }} marginTop="15px"  item xs={3}> 
           {icon}
         </Grid>
         <Grid item xs={1}>
@@ -29,8 +29,15 @@ export default function CardWithIcon({
           />
         </Grid>
         <Grid item xs={8}>
-          <Box><Typography variant="p-bold" color="#F3F3F3"> {title}</Typography></Box>
-          <Box><Typography color="#F3F3F3"> {desc}</Typography></Box>
+          <Box>
+            <Typography variant="p-bold" color="#F3F3F3">
+              {" "}
+              {title}
+            </Typography>
+          </Box>
+          <Box>
+            <Typography color="#F3F3F3"> {desc}</Typography>
+          </Box>
         </Grid>
       </Grid>
     </Box>
