@@ -1,4 +1,5 @@
 import { Container, Grid, Typography, Button } from "@mui/material";
+import Link from "next/link";
 export default function Navbar() {
   return (
     <Container>
@@ -11,34 +12,50 @@ export default function Navbar() {
         }}
       >
         <Grid item xs={3}>
-          <Typography variant="logo" color="primary">
-            AYUDEMOS
-          </Typography>
+          <Link href="/">
+            <Typography
+              variant="logo"
+              color="primary"
+              style={{ cursor: "pointer" }}
+            >
+              AYUDEMOS
+            </Typography>
+          </Link>
         </Grid>
         <Grid item xs={2}>
-          <Button variant="text" color="secondary">
-            ¿Qué hacemos?
-          </Button>
+          <Link href="/what-do">
+            <Button variant="text" color="secondary">
+              ¿Qué hacemos?
+            </Button>
+          </Link>
         </Grid>
         <Grid item xs={2}>
-          <Button variant="text" color="secondary">
-            ¿Quiénes somos?
-          </Button>
+          <Link href="/about-us">
+            <Button variant="text" color="secondary">
+              ¿Quiénes somos?
+            </Button>
+          </Link>
         </Grid>
         <Grid item xs={2}>
-          <Button variant="text" color="secondary">
-            Solicitud RTE
-          </Button>
+          <Link href="/request">
+            <Button variant="text" color="secondary">
+              Solicitud RTE
+            </Button>
+          </Link>
         </Grid>
         <Grid item xs={2}>
-          <Button variant="text" color="secondary">
-            Contacto
-          </Button>
+          <Link href="/contact-us">
+            <Button variant="text" color="secondary">
+              Contacto
+            </Button>
+          </Link>
         </Grid>
         <Grid item xs={1}>
-          <Button variant="outlined" color="primary">
-            Donar
-          </Button>
+          <Link href="/donate">
+            <Button variant="outlined" color="primary">
+              Donar
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </Container>
