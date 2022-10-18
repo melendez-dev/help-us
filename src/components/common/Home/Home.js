@@ -1,31 +1,34 @@
+import { useState } from "react";
+import { Slide } from "react-slideshow-image";
 import { TextField, Box, Typography, Button, Container } from "@mui/material";
 export default function Home() {
+  const images = [
+    "/images/SlidersHome/slide_one.png",
+    "/images/SlidersHome/slide_two.png",
+    "/images/SlidersHome/slide_three.png",
+  ];
+  // create a interator of images
   return (
-    <Container>
-        <Box>
-
-           <Box> 
-        <Typography variant="h1" color="#f3f3f3">
-          ¡Construir casas, es solo el comienzo!
+    <Box
+      style={{
+        position: "relative",
+      }}
+    >
+      <Box
+        style={{
+          position: "absolute",
+          top: "50%",
+          zIndex: 10,
+          left: "50%",
+        }}
+      >
+        <Typography variant="h1-bold" color="#ffff">
+          adfgfdws
         </Typography>
       </Box>
+			<Slide duration={4000}>
 
-      <Box>
-      <Typography variant="p" color="#f3f3f3">
-        ¡Trabajamos por una sociedad justa, sin pobreza. Damos esperanza a la
-        población más vulnerable en el barrio “Las Flores” en la ciudad de
-        Barranquilla, Colombia
-      </Typography>
-      </Box>
-
-      <Button width="82px" height="21px">
-        Involúcrate
-      </Button>
-
-
-
-
-     </Box>
-    </Container>
+			</Slide>
+    </Box>
   );
 }

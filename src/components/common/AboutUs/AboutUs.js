@@ -81,7 +81,7 @@ export default function AboutUs() {
       >
         <Container>
           <Grid container spacing="1">
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Box
                 style={{
                   textAlign: "center",
@@ -100,19 +100,7 @@ export default function AboutUs() {
               </Box>
             </Grid>
 
-            <Grid item xs={2}>
-              <Box
-                style={{
-                  width: "4px",
-                  height: "130px",
-                  background: "#fff",
-                  marginLeft: "26%",
-                  marginTop: "16%",
-                }}
-              ></Box>
-            </Grid>
-
-            <Grid item xs={4}>
+            <Grid item xs={12} md={6}>
               <Box
                 style={{
                   textAlign: "center",
