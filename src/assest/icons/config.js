@@ -1,4 +1,44 @@
 // common icons
+export const IconCloseQuote = ({
+  width = 18,
+  height = 30,
+  color = "#434343",
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 30 18"
+    >
+      <path
+        fill={color}
+        d="M18.813.11h10.49l-7.655 17.86h-6.875L18.813.11ZM4.496.11h10.49L7.331 17.97H.457L4.497.11Z"
+      />
+    </svg>
+  );
+};
+export const IconOpenQuote = ({
+  width = 30,
+  height = 18,
+  color = "#434343",
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 30 18"
+    >
+      <path
+        fill={color}
+        d="M11.187 17.89H.697L8.352.03h6.875l-4.04 17.86Zm14.316 0H15.014L22.669.03h6.874l-4.04 17.86Z"
+      />
+    </svg>
+  );
+};
 export const IconLove = ({ width = 60, height = 61, color = "#f3f3f3" }) => {
   return (
     <svg
