@@ -69,7 +69,7 @@ export default function AboutUs() {
         </Grid>
 
 
-        <Grid item xs={2}>
+        <Grid  item xs={2}>
           <Box style={{
               width: "4px",
               height: "150px",
