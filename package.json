@@ -1,6 +1,6 @@
 {
   "name": "help-us",
-	"author": "melendez-dev and Santylol1",
+  "author": "melendez-dev and Santylol1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,8 @@
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.37.0"
+    "react-hook-form": "^7.37.0",
+    "react-slideshow-image": "^4.0.5"
   },
   "devDependencies": {
     "eslint": "8.25.0",
