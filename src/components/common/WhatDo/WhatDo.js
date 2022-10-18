@@ -1,80 +1,179 @@
 import CardWithIcon from "../../shared/Cards/CardWithIcon";
-import { IconArrowRight, IconBook, IconBuilding, IconEnergy, IconFaebook, IconFamily, IconHealt, IconInstagram, IconJudge, IconSex } from "../../../assest/icons/config";
-import { TextField, Box, Typography, Button, Container, Card, Grid } from "@mui/material";
+import {
+  IconArrowRight,
+  IconBook,
+  IconBuilding,
+  IconEnergy,
+  IconFaebook,
+  IconFamily,
+  IconHealt,
+  IconInstagram,
+  IconJudge,
+  IconHouse,
+  IconSex,
+  IconLove,
+} from "../../../assest/icons/config";
+import {
+  TextField,
+  Box,
+  Typography,
+  Button,
+  Container,
+  Card,
+  Grid,
+} from "@mui/material";
 export default function WhatDo() {
   return (
     <Box>
-      <Box>
-        <Box>
-          <Typography variant="h2-bold" color="secondary">
-            Juntos <b>podemos construir sueños</b>
-          </Typography>
-        </Box>
-
-        <Box>
-          <Typography variant="p" color="secondary">
-            Nuestro principal proyecto es acercar a las familias más vulnerables
-            del barrio “las Flores” a una vivienda digna. Buscamos dar respuesta
-            al déficit habitacional originado por la situación de pobreza que
-            afecta a esta población en Barranquilla, Colombia.
-          </Typography>
-        </Box>
-      </Box>
-
-
-      <Card>
-      <Grid container spacing="1"
+      <div
         style={{
-        display: "flex",
-        flexDirection: "row",
-        textAlign: "center",
-        alignItems: "center",
-        background: "#D8705D",
-        height: "296px",
-        position: "relative"
-        
-      }}>
-       
-       <Grid item xs="4">
-       <Box><Typography variant="h1" color="#f3f3f3" >IMPACTO</Typography></Box>
-        <Box><Typography variant="h1-bold" color="#f3f3f3">SOCIAL</Typography></Box>
-       </Grid>
-       
-       <Grid item xs="4">
-       <Box><item>helloword</item></Box>
-       <Box><Typography variant="h1-bold" color="#f3f3f3">52</Typography></Box>
-       <Box><Typography variant="p" color="#f3f3f3">Casas construidas
-       y donadas</Typography></Box>
-       </Grid>
+          backgroundImage: "url(/images/header-who-do.png)",
+          height: 500,
+          position: "relative",
+        }}
+      >
+        <Container>
+          <Box
+            style={{
+              position: "absolute",
+              top: "25%",
+            }}
+          >
+            <Box>
+              <Typography variant="h2-bold" color="secondary">
+                Juntos{" "}
+                <span
+                  style={{
+                    fontWeight: 900,
+                  }}
+                >
+                  podemos <br />
+                  construir sueños
+                </span>
+              </Typography>
+            </Box>
+            <Box mt={2}>
+              <Typography variant="p" color="secondary">
+                Nuestro principal proyecto es acercar a las <br /> familias más
+                vulnerables del barrio “las Flores” a una vivienda <br />
+                digna. Buscamos dar respuesta al déficit habitacional <br />
+                originado por la situación de pobreza que afecta a esta <br />
+                población en Barranquilla, Colombia.
+              </Typography>
+            </Box>
+          </Box>
+        </Container>
+      </div>
+      <Card>
+        <Grid
+          container
+          spacing="1"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            textAlign: "center",
+            alignItems: "center",
+            background: "#D8705D",
+            height: "296px",
+            position: "relative",
+          }}
+        >
+          <Grid item xs="4">
+            <Box>
+              <Typography variant="h1" color="#f3f3f3">
+                IMPACTO
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="h1-bold" color="#f3f3f3">
+                SOCIAL
+              </Typography>
+            </Box>
+          </Grid>
 
-       
-       <Grid item xs="4">
-       <Box><item>helloword</item></Box>
-       <Box><Typography variant="h1-bold" color="#f3f3f3">322</Typography></Box>
-       <Box><Typography variant="p" color="#f3f3f3">Familias con un nuevo hogar</Typography></Box>
-       </Grid>
+          <Grid item xs="4">
+            <Box>
+              <IconHouse />
+            </Box>
+            <Box>
+              <Typography variant="h1-bold" color="#f3f3f3">
+                52
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="p" color="#f3f3f3">
+                Casas construidas y donadas
+              </Typography>
+            </Box>
+          </Grid>
 
+          <Grid item xs="4">
+            <Box>
+              <IconLove />
+            </Box>
+            <Box>
+              <Typography variant="h1-bold" color="#f3f3f3">
+                322
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="p" color="#f3f3f3">
+                Familias con un nuevo hogar
+              </Typography>
+            </Box>
+          </Grid>
         </Grid>
       </Card>
-      
+      <Container></Container>
 
+			<Container marginRight={4} marginLeft={4} marginY={6}>
+				{/*pass this in an different component sharepass this in an different component sharedd*/}
+        <Box
+          mt={5}
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Box>
+            <Typography
+              variant="h2-bold"
+              color="#fff"
+              style={{
+                backgroundColor: "#D8705D",
+                padding: "10px",
+              }}
+            >
+              Líneas de acción
+            </Typography>
+          </Box>
+          <Box
+            style={{
+              width: "537px",
+              height: "5px",
+              backgroundColor: "#D8705D",
+              marginLeft: "20px",
+            }}
+          ></Box>
+        </Box>
 
+        <Box marginY={6}>
+          <Typography variant="p" color="secondary">
+            La vivienda, un derecho humano. Ayudemos se enfoca en el derecho a
+            la vivienda, como clave para la consecución de los Objetivos de
+            Desarrollo Sostenible (ODS). En 2015, los Estados Miembros de las
+            Naciones Unidas aprobaron 17 Objetivos como parte de la Agenda 2030
+            para el Desarrollo Sostenible, donde se establece un plan para
+            alcanzarlos en 15 años. La Agenda 2030 y los Objetivos de Desarrollo
+            Sostenible (ODS) establecen una hoja de ruta para avanzar en los
+            grandes retos sociales, económicos y medioambientales, configurando
+            una iniciativa para la incorporación de los derechos humanos en las
+            políticas públicas, tanto desde los objetivos como mediante los
+            instrumentos. En este sentido, Ayudemos impacta a través de su labor
+            directamente con ocho de los ODS: 1, 3, 4, 5, 7, 10, 11.
+          </Typography>
+        </Box>
 
-
-      <Box>
-        <p>Líneas de acción</p>
-      </Box>
-
-      <Box marginY={6}>
-        <Typography variant="p" color="secondary">
-        La vivienda, un derecho humano. Ayudemos se enfoca en el derecho a la vivienda, como clave para la consecución de los Objetivos de Desarrollo Sostenible (ODS). En 2015, los Estados Miembros de las Naciones Unidas aprobaron 17 Objetivos como parte de la Agenda 2030 para el Desarrollo Sostenible, donde se establece un plan para alcanzarlos en 15 años. La Agenda 2030 y los Objetivos de Desarrollo Sostenible (ODS) establecen una hoja de ruta para avanzar en los grandes retos sociales, económicos y medioambientales, configurando una iniciativa para la incorporación de los derechos humanos en las políticas públicas, tanto desde los objetivos como mediante los instrumentos. En este sentido, Ayudemos impacta a través de su labor directamente con ocho de los ODS: 1, 3, 4, 5, 7, 10, 11.
-        </Typography>
-      </Box>
-
-      <Container
-      marginRight={4}
-      marginLeft={4} 
-      marginY={6}>
         <CardWithIcon
           title="ODS 1: FIN DE LA POBREZA"
           icon={<IconFamily />}
@@ -128,21 +227,17 @@ export default function WhatDo() {
 
       <Box>
         <Box>
-            <Typography variant="h1" color="#F3F3F3">
+          <Typography variant="h1" color="#F3F3F3">
             Ubicación del proyecto
-            </Typography> 
+          </Typography>
         </Box>
         <Box>
-        <Typography variant="p" color="#434343">
-        52 viviendas intervenidas en el barrio “Las Flores” en la ciudad de Barranquilla.
-            </Typography> 
+          <Typography variant="p" color="#434343">
+            52 viviendas intervenidas en el barrio “Las Flores” en la ciudad de
+            Barranquilla.
+          </Typography>
         </Box>
-
-
       </Box>
-
-
-      
     </Box>
   );
 }
