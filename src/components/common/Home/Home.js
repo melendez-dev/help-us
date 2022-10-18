@@ -1,4 +1,4 @@
-import SimpleImageSlider from "react-simple-image-slider";
+import SimpleImageSlider from "react-simple-image-slider";;
 import { Slide } from "react-slideshow-image";
 import {
   TextField,
