@@ -12,6 +12,8 @@ import {
   IconHouse,
   IconSex,
   IconLove,
+  IconCloseQuote,
+  IconOpenQuote,
 } from "../../../assest/icons/config";
 import {
   TextField,
@@ -22,6 +24,11 @@ import {
   Card,
   Grid,
 } from "@mui/material";
+
+// import TextLine component
+import TextLine from "../../shared/TextLine/TextLine";
+import Image from "next/image";
+
 export default function WhatDo() {
   return (
     <Box>
@@ -124,41 +131,78 @@ export default function WhatDo() {
           </Grid>
         </Grid>
       </Card>
-      <Container></Container>
+      <Container>
+        <TextLine text="Proyectos" color="#F3F3F3" fontColor="#000" />
+        <Box>video</Box>
+      </Container>
 
-			<Container marginRight={4} marginLeft={4} marginY={6}>
-				{/*pass this in an different component sharepass this in an different component sharedd*/}
-        <Box
-          mt={5}
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <Box>
-            <Typography
-              variant="h2-bold"
-              color="#fff"
-              style={{
-                backgroundColor: "#D8705D",
-                padding: "10px",
-              }}
-            >
-              Líneas de acción
-            </Typography>
-          </Box>
-          <Box
-            style={{
-              width: "537px",
-              height: "5px",
-              backgroundColor: "#D8705D",
-              marginLeft: "20px",
-            }}
-          ></Box>
+      <Container>
+        <TextLine text="Beneficiaria" color="#F3F3F3" fontColor="#000" />
+        <Box mt={3}>
+          <Grid container>
+            <Grid item xs={12} md={6}>
+              <Box
+                style={{
+                  display: "flex",
+                }}
+              >
+                <Box
+                  style={{
+                    // 180 grades icon
+                    transform: "rotate(180deg)",
+                    alignSelf: "center",
+                    marginRight: "10px",
+                  }}
+                >
+                  <IconArrowRight color="black" />
+                </Box>
+                <Box
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <Box>
+                    <IconOpenQuote />
+                  </Box>
+                  <Box
+                    style={{
+                      padding: "0 20px",
+                    }}
+                  >
+                    <Typography variant="h3-bold">
+                      En mi casa anterior se me metía el agua y no teníamos
+                      baño, esta ayuda no solo me beneficia a mí, también al
+                      barrio.
+                    </Typography>
+                  </Box>
+                  <Box
+                    style={{
+                      alignSelf: "end",
+                    }}
+                  >
+                    <IconOpenQuote />
+                  </Box>
+                </Box>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Image
+                src="/images/testimonial.png"
+                width="189px"
+                height="160px"
+                layout="responsive"
+              />
+            </Grid>
+          </Grid>
         </Box>
+      </Container>
+
+      <Container marginY={6}>
+        {/*pass this in an different component sharepass this in an different component sharedd*/}
+        <TextLine text="Líneas de acción" color="#D8705D" />
 
         <Box marginY={6}>
-          <Typography variant="p" color="secondary">
+          <Typography variant="p" color="secondary" fontColor="#fff">
             La vivienda, un derecho humano. Ayudemos se enfoca en el derecho a
             la vivienda, como clave para la consecución de los Objetivos de
             Desarrollo Sostenible (ODS). En 2015, los Estados Miembros de las
