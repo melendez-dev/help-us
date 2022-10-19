@@ -171,6 +171,8 @@ export default function WhatDo() {
               <Box
                 style={{
                   display: "flex",
+                  alignItems: "center",
+                  height: "100%",
                 }}
               >
                 <Box
@@ -217,7 +219,6 @@ export default function WhatDo() {
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  marginTop: "5%",
                 }}
               >
                 <Box>
@@ -239,6 +240,8 @@ export default function WhatDo() {
                   ml="4%"
                   style={{
                     transform: "rotate(180)",
+                    display: "flex",
+                    alignItems: "center",
                   }}
                 >
                   <IconArrowRight />
