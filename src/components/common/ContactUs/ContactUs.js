@@ -48,7 +48,7 @@ export default function ContactUs() {
                   height: "100%",
                   position: "relative",
                   right: "-10%",
-                  top: "2%",
+                  top: "-4%",
                 }}
               >
                 <IconCustomWhatsapp />
