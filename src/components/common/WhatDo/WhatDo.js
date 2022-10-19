@@ -269,19 +269,17 @@ export default function WhatDo() {
         />
       </Container>
 
+      <Container marginY={6}>
       <Box>
-        <Box>
-          <Typography variant="h1" color="#F3F3F3">
-            Ubicación del proyecto
-          </Typography>
-        </Box>
-        <Box>
-          <Typography variant="p" color="#434343">
+      <TextLine text="Ubicacion del proyecto" color="#D8705D" />
+        <Box marginY={6}>
+          <Typography variant="p" color="#434343" >
             52 viviendas intervenidas en el barrio “Las Flores” en la ciudad de
             Barranquilla.
           </Typography>
         </Box>
       </Box>
+      </Container>
     </Box>
   );
 }
