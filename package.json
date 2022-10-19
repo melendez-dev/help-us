@@ -1,11 +1,12 @@
 {
   "name": "help-us",
   "author": "melendez-dev and Santylol1",
+	"homepage": "https://ayudemos.website/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
