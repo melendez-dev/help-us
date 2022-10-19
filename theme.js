@@ -27,6 +27,7 @@ export const theme = createTheme({
             "& .MuiOutlinedInput-root": {
               height: "40px",
               borderRadius: "50px",
+              width: "100%",
             },
           },
         },
