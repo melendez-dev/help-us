@@ -7,60 +7,145 @@ import {
   Card,
   Grid,
 } from "@mui/material";
-import CardBox from "../../shared/Cards/CardBox";
+// icons
+import { IconCustomWhatsapp } from "../../../assest/icons/config";
 export default function ContactUs() {
   return (
-    <Box>
-      <Grid container spacing="1">
-          <Grid item xs={12}>
-      <Card>
-        <Grid
-          container
-          spacing="12"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            textAlign: "center",
-            alignItems: "center",
-            background: "#D8705D",
-            height: "465px",
-            width: "574px",
-          }}
-        >
-          <Box>
-            <Typography variant="h2" color="white">
-              Transferencia Bancaria
+    <Box
+      style={{
+        backgroundColor: "#FFF",
+        padding: "50px 0",
+      }}
+    >
+      <Container>
+        <Grid container>
+          <Grid
+            item
+            xs={12}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "50px",
+            }}
+          >
+            <Typography variant="h1-bold" color="#434343">
+              ¿CÓMO PODEMOS AYUDARTE?
             </Typography>
-
-            <Typography variant="p" color="white">
-              ¡Estás a punto de apoyar la construcción de <b>un nuevo hogar</b>{" "}
-              para quienes más lo necesitan!
-            </Typography>
-          </Box>
-
-          <Box>
-            <Typography variant="h3" color="white">
-              Banco Davivienda
-            </Typography>
-
-            <Typography variant="p-bold" color="white">
-              #### #### #### #####
-            </Typography>
-          </Box>
-
-          <Box>
-            <Typography variant="h3" color="white">
-              Banco Bancolombia
-            </Typography>
-
-            <Typography variant="p-bold" color="white">
-              #### #### #### #####
-            </Typography>
-          </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <Box
+                style={{
+                  alignItems: "center",
+                  display: "flex",
+                  height: "100%",
+                  position: "relative",
+                  right: "-10%",
+                  top: "-4%",
+                }}
+              >
+                <IconCustomWhatsapp />
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Box>
+                  <Typography variant="h3-bold" color="#434343">
+                    O déjanos tus datos y te llamamos
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                <Box>
+                  <Typography variant="p-small" color="#434343">
+                    Nombre
+                  </Typography>
+                </Box>
+                <Box
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  <TextField
+                    variant="outlined"
+                    style={{
+                      width: "60%",
+                    }}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                <Box>
+                  <Typography variant="p-small" color="#434343">
+                    Teléfono
+                  </Typography>
+                </Box>
+                <Box
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  <TextField
+                    variant="outlined"
+                    style={{
+                      width: "60%",
+                    }}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                <Box>
+                  <Typography variant="p-small" color="#434343">
+                    Correo
+                  </Typography>
+                </Box>
+                <Box
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  <TextField
+                    variant="outlined"
+                    style={{
+                      width: "60%",
+                    }}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    width: "60%",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    style={{
+                      width: "131px",
+                      fotnSize: "13px",
+                      fontWeight: "bold",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    Enviar
+                  </Button>
+                </Box>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
-      </Card>
-      </Grid>
-        </Grid>
+      </Container>
     </Box>
   );
 }

@@ -150,7 +150,7 @@ export default function WhatDo() {
           mt={5}
           mb={5}
         >
-          <video autoPlay controls>
+          <video controls>
             <source src="/videos/video-what-do.mp4" />
           </video>
         </Box>
@@ -347,8 +347,6 @@ export default function WhatDo() {
           </Box>
         </Box>
       </Container>
-
-      
     </Box>
   );
 }
