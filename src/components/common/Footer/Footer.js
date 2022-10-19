@@ -102,7 +102,12 @@ export default function Footer() {
               }}
             >
               <Button variant="outlined" color="primary">
-                Cambiar una vida
+                <span
+                  style={{
+                    color: "white",
+                  }}>
+                  Cambiar una vida
+                </span>
               </Button>
             </Box>
           </Grid>
@@ -111,10 +116,13 @@ export default function Footer() {
               <hr />
             </Box>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Link href="/politices">
               <Typography
                 variant="p-small"
@@ -127,26 +135,35 @@ export default function Footer() {
               </Typography>
             </Link>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Typography variant="p-small" color="error">
               Términos de uso
             </Typography>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Typography variant="p-small" color="error">
               Desarrollado Vélez Desing
             </Typography>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Typography variant="p-small" color="error">
               © 2021 Ayudemos
             </Typography>
