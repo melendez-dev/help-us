@@ -1,4 +1,4 @@
-import SimpleImageSlider from "react-simple-image-slider";;
+import SimpleImageSlider from "react-simple-image-slider";
 import { Slide } from "react-slideshow-image";
 import {
   TextField,
@@ -74,6 +74,7 @@ export default function Home() {
                 backgroundSize: "cover",
                 backgrounRepeat: "no-repeat",
                 backgroundPosition: "center",
+                width: "100%",
                 // change black opacity
                 //opacity: "0.8",
               }}
