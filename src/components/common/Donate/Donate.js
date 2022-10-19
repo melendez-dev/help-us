@@ -58,6 +58,8 @@ export default function Donate() {
               height: "2px",
               background: "#fff",
               marginTop: "10px",
+              textAlign: "center",
+              marginRight: "9%"
             }}
           />
         </Grid>

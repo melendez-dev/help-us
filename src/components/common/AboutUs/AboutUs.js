@@ -167,7 +167,7 @@ export default function AboutUs() {
           <Grid container spacing="1">
             <Grid item xs={12}>
               <Box mt={3}>
-                <Typography variant="h2-bold" color="secondary">
+                <Typography variant="h1-bold" color="secondary">
                   Valores
                 </Typography>
               </Box>
