@@ -1,38 +1,52 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, Container } from "@mui/material";
 export default function CardBox({
-    title,
-    desc,
-    background,
-    height,
-    width,
-    colorText = "#F3F3F3",
+  title,
+  desc,
+  background,
+  height,
+  width,
+  colorText = "#F3F3F3",
+  boxShadow = null,
+  container = false,
 }) {
-    return (
-        <Box
+  const ComponentCustom = container ? Container : Box;
+  return (
+    <Box
+      style={{
+        title: title,
+        desc: desc,
+        background: background,
+        height: height,
+        width: width,
+        borderRadius: "12px",
+        marginTop: "30px",
+        boxShadow: boxShadow,
+      }}
+    >
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <ComponentCustom
             style={{
-            title: title,
-            desc: desc,
-            background: background,
-            height: height,
-            width: width,
-            borderRadius: "12px",
-            marginTop: "30px",
-          }}>
-            <Box>
-            <Grid conteiner spacing={1}>
-            <Grid style={{  textAlign: "Right" }} marginTop="15px"  item xs={12}/>
-            </Grid>
-            </Box>
+              paddingTop: container ? "20px" : undefined,
+            }}
+          >
             <Typography variant="h1-bold" color="#D8705D">
-                {title}
+              {title}
             </Typography>
-            <Box>
-            <Box>
-            <Typography variant="p" color={colorText}> {desc}</Typography>
-          </Box>
-
-
-            </Box>
-        </Box>
-    )
+          </ComponentCustom>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <ComponentCustom
+          style={{
+            marginTop: container ? "10px" : undefined,
+          }}
+        >
+          <Typography variant="p" color={colorText}>
+            {desc}
+          </Typography>
+        </ComponentCustom>
+      </Grid>
+    </Box>
+  );
 }
