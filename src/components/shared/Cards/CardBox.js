@@ -5,6 +5,7 @@ export default function CardBox({
     background,
     height,
     width,
+    colorText = "#F3F3F3",
 }) {
     return (
         <Box
@@ -21,6 +22,16 @@ export default function CardBox({
             <Grid conteiner spacing={1}>
             <Grid style={{  textAlign: "Right" }} marginTop="15px"  item xs={12}/>
             </Grid>
+            </Box>
+            <Typography variant="h1-bold" color="#D8705D">
+                {title}
+            </Typography>
+            <Box>
+            <Box>
+            <Typography variant="p" color={colorText}> {desc}</Typography>
+          </Box>
+
+
             </Box>
         </Box>
     )
