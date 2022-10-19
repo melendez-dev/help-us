@@ -8,7 +8,11 @@ import {
 } from "@mui/material";
 export default function Politice() {
   return (
-    <Box>
+    <Box
+      style={{
+        backgroundColor: "#F3F3F3",
+      }}
+    >
       <Container>
         <Grid container spacing="1">
           <Grid item xs={12}>
@@ -280,52 +284,54 @@ export default function Politice() {
         </Grid>
       </Container>
 
-
-      
       <Container>
         <Grid container spacing="1">
           <Grid item xs={12}>
             <Box ml={1.5} mt={7}>
-        <Typography variant="h3-bold" color="primary">
-          6. Modificación a nuestras políticas de privacidad
-        </Typography>
-      </Box>
+              <Typography variant="h3-bold" color="primary">
+                6. Modificación a nuestras políticas de privacidad
+              </Typography>
+            </Box>
 
-      <Box>
-        <Typography variant="p">
-          Ayudemos podrá modificar esta Política de Privacidad en cualquier
-          momento debido a nuevas actividades, necesidades o cambios en la
-          normativa vigente. Cuando existan cambios sustanciales en la misma, te
-          lo notificaremosen la pagina principal de nuestros Sitios Web mediante
-          una aviso y a través de un correo electrónico a la dirección que has
-          registrado para inscribirte en los Sitios Web.
-        </Typography>
-      </Box>
+            <Box>
+              <Typography variant="p">
+                Ayudemos podrá modificar esta Política de Privacidad en
+                cualquier momento debido a nuevas actividades, necesidades o
+                cambios en la normativa vigente. Cuando existan cambios
+                sustanciales en la misma, te lo notificaremosen la pagina
+                principal de nuestros Sitios Web mediante una aviso y a través
+                de un correo electrónico a la dirección que has registrado para
+                inscribirte en los Sitios Web.
+              </Typography>
+            </Box>
 
-      <Box mt={3}>
-        <Typography variant="p">
-          Si no estás de acuerdo con una nueva versión de nuestra Política de
-          Privacidad, te solicitamos por favor que no utilices nuestros Sitios
-          Web.
-        </Typography>
-      </Box>
+            <Box mt={3}>
+              <Typography variant="p">
+                Si no estás de acuerdo con una nueva versión de nuestra Política
+                de Privacidad, te solicitamos por favor que no utilices nuestros
+                Sitios Web.
+              </Typography>
+            </Box>
 
-      <Box mt={3}>
-        <Typography variant="p">
-          La página principal de nuestros Sitios Web siempre contendrá el enlace
-          a la versión más actualizada de nuestras Politica de Privacidad.
-        </Typography>
-      </Box>
+            <Box mt={3}>
+              <Typography variant="p">
+                La página principal de nuestros Sitios Web siempre contendrá el
+                enlace a la versión más actualizada de nuestras Politica de
+                Privacidad.
+              </Typography>
+            </Box>
 
-      <Box marginY={6} mt={3}>
-        <Typography variant="p">
-          El responsable del tratamiento de tus datos es Fundación Ayudemos que
-          se encuentra ubicada en Barranquilla, Atlántico, Colombia
-          </Typography>
+            <Box marginY={6} mt={3}>
+              <Typography variant="p">
+                El responsable del tratamiento de tus datos es Fundación
+                Ayudemos que se encuentra ubicada en Barranquilla, Atlántico,
+                Colombia
+              </Typography>
             </Box>
           </Grid>
         </Grid>
       </Container>
-      </Box>
+    </Box>
   );
 }
+

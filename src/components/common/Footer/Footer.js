@@ -1,4 +1,5 @@
 import { Container, Grid, Typography, Button, Box } from "@mui/material";
+import { useRouter } from "next/router";
 // icons social media
 import {
   IconFaebook,
@@ -7,6 +8,7 @@ import {
 } from "../../../assest/icons/config";
 import Link from "next/link";
 export default function Footer() {
+  const router = useRouter();
   return (
     <Box
       style={{
@@ -101,8 +103,18 @@ export default function Footer() {
                 justifyContent: "center",
               }}
             >
-              <Button variant="outlined" color="primary">
-                Cambiar una vida
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={() => router.push("/donate")}
+              >
+                <span
+                  style={{
+                    color: "#fff",
+                  }}
+                >
+                  Cambiar una vida
+                </span>
               </Button>
             </Box>
           </Grid>
@@ -111,10 +123,13 @@ export default function Footer() {
               <hr />
             </Box>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Link href="/politices">
               <Typography
                 variant="p-small"
@@ -127,26 +142,35 @@ export default function Footer() {
               </Typography>
             </Link>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Typography variant="p-small" color="error">
               Términos de uso
             </Typography>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Typography variant="p-small" color="error">
               Desarrollado Vélez Desing
             </Typography>
           </Grid>
-          <Grid item xs={3}
-          style={{
-            textAlign: "center",
-          }}>
+          <Grid
+            item
+            xs={3}
+            style={{
+              textAlign: "center",
+            }}
+          >
             <Typography variant="p-small" color="error">
               © 2021 Ayudemos
             </Typography>
