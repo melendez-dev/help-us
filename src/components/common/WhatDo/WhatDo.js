@@ -25,6 +25,12 @@ import {
   Grid,
 } from "@mui/material";
 
+// MAP
+import MapGoogle from "../../shared/Maps/Map";
+
+// video
+import ReactPlayer from "react-player";
+
 // import TextLine component
 import TextLine from "../../shared/TextLine/TextLine";
 import Image from "next/image";
@@ -35,6 +41,8 @@ export default function WhatDo() {
       <div
         style={{
           backgroundImage: "url(/images/header-who-do.png)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           height: 500,
           position: "relative",
         }}
@@ -71,73 +79,92 @@ export default function WhatDo() {
           </Box>
         </Container>
       </div>
-      <Card>
-        <Grid
-          container
-          spacing="1"
+      <Card
+        style={{
+          background: "#D8705D",
+          height: "296px",
+          position: "relative",
+          display: "flex",
+          flexDirection: "row",
+          textAlign: "center",
+          alignItems: "center",
+        }}
+      >
+        <Container>
+          <Grid container spacing="1">
+            <Grid item xs="4">
+              <Box>
+                <Typography variant="h1" color="#f3f3f3">
+                  IMPACTO
+                </Typography>
+              </Box>
+              <Box>
+                <Typography variant="h1-bold" color="#f3f3f3">
+                  SOCIAL
+                </Typography>
+              </Box>
+            </Grid>
+
+            <Grid item xs="4">
+              <Box>
+                <IconHouse />
+              </Box>
+              <Box>
+                <Typography variant="h1-bold" color="#f3f3f3">
+                  52
+                </Typography>
+              </Box>
+              <Box>
+                <Typography variant="p" color="#f3f3f3">
+                  Casas construidas y donadas
+                </Typography>
+              </Box>
+            </Grid>
+
+            <Grid item xs="4">
+              <Box>
+                <IconLove />
+              </Box>
+              <Box>
+                <Typography variant="h1-bold" color="#f3f3f3">
+                  322
+                </Typography>
+              </Box>
+              <Box>
+                <Typography variant="p" color="#f3f3f3">
+                  Familias con un nuevo hogar
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Card>
+      <Container style={{ marginBottom: "50px" }}>
+        <TextLine text="Proyectos" color="#F3F3F3" fontColor="#000" />
+        <Box
           style={{
             display: "flex",
             flexDirection: "row",
-            textAlign: "center",
-            alignItems: "center",
-            background: "#D8705D",
-            height: "296px",
-            position: "relative",
+            justifyContent: "center",
           }}
+          mt={5}
+          mb={5}
         >
-          <Grid item xs="4">
-            <Box>
-              <Typography variant="h1" color="#f3f3f3">
-                IMPACTO
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="h1-bold" color="#f3f3f3">
-                SOCIAL
-              </Typography>
-            </Box>
-          </Grid>
-
-          <Grid item xs="4">
-            <Box>
-              <IconHouse />
-            </Box>
-            <Box>
-              <Typography variant="h1-bold" color="#f3f3f3">
-                52
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="p" color="#f3f3f3">
-                Casas construidas y donadas
-              </Typography>
-            </Box>
-          </Grid>
-
-          <Grid item xs="4">
-            <Box>
-              <IconLove />
-            </Box>
-            <Box>
-              <Typography variant="h1-bold" color="#f3f3f3">
-                322
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="p" color="#f3f3f3">
-                Familias con un nuevo hogar
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
-      </Card>
-      <Container>
-        <TextLine text="Proyectos" color="#F3F3F3" fontColor="#000" />
-        <Box>video</Box>
+          <video autoPlay controls>
+            <source src="/videos/video-what-do.mp4" />
+          </video>
+        </Box>
       </Container>
 
       <Container>
-        <TextLine text="Beneficiaria" color="#F3F3F3" fontColor="#000" />
+        <Box
+          style={{
+            marginBottom: "50px",
+          }}
+        >
+          <TextLine text="Beneficiaria" color="#F3F3F3" fontColor="#000" />
+        </Box>
+
         <Box mt={3}>
           <Grid container>
             <Grid item xs={12} md={6}>
@@ -185,100 +212,137 @@ export default function WhatDo() {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <Image
-                src="/images/testimonial.png"
-                width="189px"
-                height="160px"
-                layout="responsive"
-              />
+            <Grid item xs={6} md={6}>
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "5%",
+                }}
+              >
+                <Box>
+                  <Box>
+                    <img
+                      src="/images/testimonial.png"
+                      width={189}
+                      height={160}
+                    />
+                  </Box>
+                  <Box mt={1}>
+                    <Typography variant="p" color="#434343">
+                      Carmen Cecilia Jiménez, madre <br />
+                      beneficiaria de barrio las flores
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  ml="4%"
+                  style={{
+                    transform: "rotate(180)",
+                  }}
+                >
+                  <IconArrowRight />
+                </Box>
+              </Box>
             </Grid>
           </Grid>
         </Box>
       </Container>
+      <Box
+        style={{
+          backgroundColor: "#F3F3F3",
+          padding: "50px",
+        }}
+      >
+        <Container marginY={6}>
+          {/*pass this in an different component sharepass this in an different component sharedd*/}
+          <Box>
+            <TextLine text="Líneas de acción" color="#D8705D" />
+          </Box>
 
-      <Container marginY={6}>
-        {/*pass this in an different component sharepass this in an different component sharedd*/}
-        <TextLine text="Líneas de acción" color="#D8705D" />
+          <Box marginY={6}>
+            <Typography variant="p" color="secondary" fontColor="#fff">
+              La vivienda, un derecho humano. Ayudemos se enfoca en el derecho a
+              la vivienda, como clave para la consecución de los Objetivos de
+              Desarrollo Sostenible (ODS). En 2015, los Estados Miembros de las
+              Naciones Unidas aprobaron 17 Objetivos como parte de la Agenda
+              2030 para el Desarrollo Sostenible, donde se establece un plan
+              para alcanzarlos en 15 años. La Agenda 2030 y los Objetivos de
+              Desarrollo Sostenible (ODS) establecen una hoja de ruta para
+              avanzar en los grandes retos sociales, económicos y
+              medioambientales, configurando una iniciativa para la
+              incorporación de los derechos humanos en las políticas públicas,
+              tanto desde los objetivos como mediante los instrumentos. En este
+              sentido, Ayudemos impacta a través de su labor directamente con
+              ocho de los ODS: 1, 3, 4, 5, 7, 10, 11.
+            </Typography>
+          </Box>
 
-        <Box marginY={6}>
-          <Typography variant="p" color="secondary" fontColor="#fff">
-            La vivienda, un derecho humano. Ayudemos se enfoca en el derecho a
-            la vivienda, como clave para la consecución de los Objetivos de
-            Desarrollo Sostenible (ODS). En 2015, los Estados Miembros de las
-            Naciones Unidas aprobaron 17 Objetivos como parte de la Agenda 2030
-            para el Desarrollo Sostenible, donde se establece un plan para
-            alcanzarlos en 15 años. La Agenda 2030 y los Objetivos de Desarrollo
-            Sostenible (ODS) establecen una hoja de ruta para avanzar en los
-            grandes retos sociales, económicos y medioambientales, configurando
-            una iniciativa para la incorporación de los derechos humanos en las
-            políticas públicas, tanto desde los objetivos como mediante los
-            instrumentos. En este sentido, Ayudemos impacta a través de su labor
-            directamente con ocho de los ODS: 1, 3, 4, 5, 7, 10, 11.
-          </Typography>
-        </Box>
-
-        <CardWithIcon
-          title="ODS 1: FIN DE LA POBREZA"
-          icon={<IconFamily />}
-          desc="La vivienda supone el mayor impacto en el coste de la vida de las ciudades, además de ser la principal dimensión que explica la exclusión social junto al empleo."
-          background="#D33C42"
-          height="144px"
-        />
-        <CardWithIcon
-          title="ODS 3: SALUD Y BIENESTAR"
-          icon={<IconHealt />}
-          desc="Una vivienda en mal estado o la falta de la misma afecta a la salud física, mental y social de las personas, con especial impacto en la población en situación de mayor vulnerabilidad, como en infancia y en personas mayores."
-          background="#629D47"
-          height="168px"
-        />
-        <CardWithIcon
-          title="ODS 4: EDUCACIÓN DE CALIDAD"
-          icon={<IconBook />}
-          desc="Una vivienda adecuada, independiente y que disponga de espacios para el estudio es clave para el desempeño escolar."
-          background="#B52F34"
-          height="120px"
-        />
-        <CardWithIcon
-          title="ODS 5: IGUALDAD DE GÉNERO"
-          icon={<IconSex />}
-          desc="La exclusión residencial y los problemas de vivienda, como los desalojos, afectan en mayor medida a las mujeres, siendo especialmente relevante el impacto en las mujeres solas con hijos/as."
-          background="#EB4D34"
-          height="168px"
-        />
-        <CardWithIcon
-          title="ODS 7: ENERGÍA ASEQUIBLE Y NO CONTAMINANTE"
-          icon={<IconEnergy />}
-          desc="La pobreza energética es una de las dimensiones de la exclusión residencial y que afecta en mayor medida a los pagos de la vivienda, con una prevalencia mayor en grupos vulnerables."
-          background="#E4AD14"
-          height="144px"
-        />
-        <CardWithIcon
-          title="ODS 10: REDUCCIÓN DE LAS DESIGUALDADES"
-          icon={<IconJudge />}
-          desc="La falta de vivienda es uno de los factores que más influye en la transmisión intergeneracional de la pobreza, al ser el patrimonio inmobiliario clave en la desigualdad de rentas."
-          background="#CB3167"
-          height="144px"
-        />
-        <CardWithIcon
-          title="ODS 11: CIUDADES Y COMUNIDADES SOSTENIBLES"
-          icon={<IconBuilding />}
-          desc="La falta de viviendas asequibles y adecuadas está detrás de gran parte de los problemas de exclusión residencial. Es necesaria la provisión de vivienda social y asequible para conseguir asegurar el acceso a una casa a todas las personas."
-          background="#DD9847"
-          height="168px"
-        />
-      </Container>
-
-      <Container marginY={6}>
-      <Box>
-      <TextLine text="Ubicacion del proyecto" color="#D8705D" />
-        <Box marginY={6}>
-          <Typography variant="p" color="#434343" >
-            52 viviendas intervenidas en el barrio “Las Flores” en la ciudad de
-            Barranquilla.
-          </Typography>
-        </Box>
+          <CardWithIcon
+            title="ODS 1: FIN DE LA POBREZA"
+            icon={<IconFamily />}
+            desc="La vivienda supone el mayor impacto en el coste de la vida de las ciudades, además de ser la principal dimensión que explica la exclusión social junto al empleo."
+            background="#D33C42"
+            height="144px"
+          />
+          <CardWithIcon
+            title="ODS 3: SALUD Y BIENESTAR"
+            icon={<IconHealt />}
+            desc="Una vivienda en mal estado o la falta de la misma afecta a la salud física, mental y social de las personas, con especial impacto en la población en situación de mayor vulnerabilidad, como en infancia y en personas mayores."
+            background="#629D47"
+            height="168px"
+          />
+          <CardWithIcon
+            title="ODS 4: EDUCACIÓN DE CALIDAD"
+            icon={<IconBook />}
+            desc="Una vivienda adecuada, independiente y que disponga de espacios para el estudio es clave para el desempeño escolar."
+            background="#B52F34"
+            height="120px"
+          />
+          <CardWithIcon
+            title="ODS 5: IGUALDAD DE GÉNERO"
+            icon={<IconSex />}
+            desc="La exclusión residencial y los problemas de vivienda, como los desalojos, afectan en mayor medida a las mujeres, siendo especialmente relevante el impacto en las mujeres solas con hijos/as."
+            background="#EB4D34"
+            height="168px"
+          />
+          <CardWithIcon
+            title="ODS 7: ENERGÍA ASEQUIBLE Y NO CONTAMINANTE"
+            icon={<IconEnergy />}
+            desc="La pobreza energética es una de las dimensiones de la exclusión residencial y que afecta en mayor medida a los pagos de la vivienda, con una prevalencia mayor en grupos vulnerables."
+            background="#E4AD14"
+            height="144px"
+          />
+          <CardWithIcon
+            title="ODS 10: REDUCCIÓN DE LAS DESIGUALDADES"
+            icon={<IconJudge />}
+            desc="La falta de vivienda es uno de los factores que más influye en la transmisión intergeneracional de la pobreza, al ser el patrimonio inmobiliario clave en la desigualdad de rentas."
+            background="#CB3167"
+            height="144px"
+          />
+          <CardWithIcon
+            title="ODS 11: CIUDADES Y COMUNIDADES SOSTENIBLES"
+            icon={<IconBuilding />}
+            desc="La falta de viviendas asequibles y adecuadas está detrás de gran parte de los problemas de exclusión residencial. Es necesaria la provisión de vivienda social y asequible para conseguir asegurar el acceso a una casa a todas las personas."
+            background="#DD9847"
+            height="168px"
+          />
+        </Container>
       </Box>
+
+      <Container marginY={6}>
+        <Box>
+          <TextLine text="Ubicacion del proyecto" color="#D8705D" />
+          <Box marginY={6}>
+            <Typography variant="p" color="#434343">
+              52 viviendas intervenidas en el barrio “Las Flores” en la ciudad
+              de Barranquilla.
+            </Typography>
+          </Box>
+          <Box mb={8}>
+            <MapGoogle />
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
