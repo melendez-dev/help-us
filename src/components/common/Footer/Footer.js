@@ -5,6 +5,7 @@ import {
   IconInstagram,
   IconLinkedin,
 } from "../../../assest/icons/config";
+import Link from "next/link";
 export default function Footer() {
   return (
     <Box
@@ -32,9 +33,17 @@ export default function Footer() {
                   justifyContent: "center",
                 }}
               >
-                <Typography variant="logo" color="primary">
-                  AYUDEMOS
-                </Typography>
+                <Link href="/">
+                  <Typography
+                    variant="logo"
+                    color="primary"
+                    style={{
+                      cursor: "pointer",
+                    }}
+                  >
+                    AYUDEMOS
+                  </Typography>
+                </Link>
               </Box>
               <Box
                 style={{
@@ -60,20 +69,29 @@ export default function Footer() {
               display={{
                 display: "flex",
                 flexDirection: "column",
+                cursor: "pointer",
               }}
             >
-              <Typography variant="p-small" color="error">
-                ¿Qué hacemos?
-              </Typography>
-              <Typography variant="p-small" color="error">
-                ¿Quiénes somos?
-              </Typography>
-              <Typography variant="p-small" color="error">
-                Solicitud RTE
-              </Typography>
-              <Typography variant="p-small" color="error">
-                Contácto
-              </Typography>
+              <Link href="/what-do">
+                <Typography variant="p-small" color="error">
+                  ¿Qué hacemos?
+                </Typography>
+              </Link>
+              <Link href="/about-us">
+                <Typography variant="p-small" color="error">
+                  ¿Quiénes somos?
+                </Typography>
+              </Link>
+              <Link href="/request">
+                <Typography variant="p-small" color="error">
+                  Solicitud RTE
+                </Typography>
+              </Link>
+              <Link href="/contact-us">
+                <Typography variant="p-small" color="error">
+                  Contácto
+                </Typography>
+              </Link>
             </Box>
           </Grid>
           <Grid item xs={4}>
@@ -94,9 +112,17 @@ export default function Footer() {
             </Box>
           </Grid>
           <Grid item xs={3}>
-            <Typography variant="p-small" color="error">
-              Política de privacidad
-            </Typography>
+            <Link href="/politices">
+              <Typography
+                variant="p-small"
+                color="error"
+                style={{
+                  cursor: "pointer",
+                }}
+              >
+                Política de privacidad
+              </Typography>
+            </Link>
           </Grid>
           <Grid item xs={3}>
             <Typography variant="p-small" color="error">
