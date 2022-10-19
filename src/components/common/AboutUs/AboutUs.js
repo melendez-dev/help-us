@@ -157,63 +157,69 @@ export default function AboutUs() {
           </Grid>
         </Grid>
       </Box>
+      <Box
+        style={{
+          background: "#F3F3F3",
+          padding: "30px 0",
+        }}
+      >
+        <Container>
+          <Grid container spacing="1">
+            <Grid item xs={12}>
+              <Box mt={3}>
+                <Typography variant="h2-bold" color="secondary">
+                  Valores
+                </Typography>
+              </Box>
 
-      <Container>
-        <Grid container spacing="1">
-          <Grid item xs={12}>
-            <Box mt={3}>
-              <Typography variant="h2-bold" color="secondary">
-                Valores
-              </Typography>
-            </Box>
+              <Box mt={4}>
+                <Typography variant="p" color="secondary">
+                  <b>Solidaridad:</b> Construimos un enfoque de preservación de
+                  los derechos fundamentales constitucionales, orientados a
+                  erradicar la desigualdad a través de acciones encaminadas a
+                  proteger la vivienda digna y el ambiente sano en la comunidad
+                  con la que trabajamos.
+                </Typography>
+              </Box>
 
-            <Box mt={4}>
-              <Typography variant="p" color="secondary">
-                <b>Solidaridad:</b> Construimos un enfoque de preservación de
-                los derechos fundamentales constitucionales, orientados a
-                erradicar la desigualdad a través de acciones encaminadas a
-                proteger la vivienda digna y el ambiente sano en la comunidad
-                con la que trabajamos.
-              </Typography>
-            </Box>
+              <Box mt={3}>
+                <Typography variant="p" color="secondary">
+                  <b>Compromiso:</b> Estamos comprometidas en el cumplimiento de
+                  nuestra misión, visión y con la dignidad humana como principio
+                  fundamental de nuestras actuaciones.
+                </Typography>
+              </Box>
 
-            <Box mt={3}>
-              <Typography variant="p" color="secondary">
-                <b>Compromiso:</b> Estamos comprometidas en el cumplimiento de
-                nuestra misión, visión y con la dignidad humana como principio
-                fundamental de nuestras actuaciones.
-              </Typography>
-            </Box>
+              <Box mt={3}>
+                <Typography variant="p" color="secondary">
+                  <b>Excelencia:</b> Aseguramos la consecución de nuestros
+                  objetivos y buscamos el mayor impacto de nuestras actuaciones
+                  a través de la calidad y la optimización de nuestras
+                  capacidades y recursos.
+                </Typography>
+              </Box>
 
-            <Box mt={3}>
-              <Typography variant="p" color="secondary">
-                <b>Excelencia:</b> Aseguramos la consecución de nuestros
-                objetivos y buscamos el mayor impacto de nuestras actuaciones a
-                través de la calidad y la optimización de nuestras capacidades y
-                recursos.
-              </Typography>
-            </Box>
+              <Box mt={3}>
+                <Typography variant="p" color="secondary">
+                  <b>Transparencia:</b> Basamos nuestra labor en la honestidad,
+                  la mutua responsabilidad y el máximo acceso a la información,
+                  como pilares de una rendición de cuentas social y económica
+                  ante nuestros colaboradores, donantes, beneficiarios y ante la
+                  sociedad en general.
+                </Typography>
+              </Box>
 
-            <Box mt={3}>
-              <Typography variant="p" color="secondary">
-                <b>Transparencia:</b> Basamos nuestra labor en la honestidad, la
-                mutua responsabilidad y el máximo acceso a la información, como
-                pilares de una rendición de cuentas social y económica ante
-                nuestros colaboradores, donantes, beneficiarios y ante la
-                sociedad en general.
-              </Typography>
-            </Box>
-
-            <Box marginY={7} mt={3}>
-              <Typography variant="p" color="secondary">
-                <b>Unidad:</b> Creemos en el trabajo en equipo y en la
-                colaboración con otras instituciones para potenciar sinergias y
-                mejorar el rendimiento de nuestro trabajo.
-              </Typography>
-            </Box>
+              <Box marginY={7} mt={3}>
+                <Typography variant="p" color="secondary">
+                  <b>Unidad:</b> Creemos en el trabajo en equipo y en la
+                  colaboración con otras instituciones para potenciar sinergias
+                  y mejorar el rendimiento de nuestro trabajo.
+                </Typography>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </Box>
     </Box>
   );
 }

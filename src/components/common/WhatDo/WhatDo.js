@@ -156,7 +156,7 @@ export default function WhatDo() {
         </Box>
       </Container>
 
-      <Container>
+      <Container style={{ marginBottom: "40px" }}>
         <Box
           style={{
             marginBottom: "50px",
