@@ -23,7 +23,7 @@ export default function TextLine({ text, color, fontColor = "#fff" }) {
       </Box>
       <Box
         style={{
-          width: "537px",
+          width: "60%",
           height: "5px",
           backgroundColor: color,
           marginLeft: "20px",
