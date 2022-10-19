@@ -86,7 +86,7 @@ export default function AboutUs() {
       >
         <Container>
           <Grid container spacing="1">
-            <Grid item xs={12}>
+            <Grid item xs={12} md={5}>
               <Box
                 style={{
                   textAlign: "center",
@@ -104,8 +104,18 @@ export default function AboutUs() {
                 </Typography>
               </Box>
             </Grid>
+            <Grid item xs={2}>
+              <Box
+                style={{
+                  width: "4px",
+                  height: "100%",
+                  background: "#f3f3f3",
+                  margin: "auto",
+                }}
+              ></Box>
+            </Grid>
 
-            <Grid item xs={12}>
+            <Grid item xs={12} md={5}>
               <Box
                 style={{
                   textAlign: "center",
@@ -126,6 +136,26 @@ export default function AboutUs() {
             </Grid>
           </Grid>
         </Container>
+      </Box>
+      <Box my={3}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <Image
+              src="/images/gird-6-1-us.png"
+              width={582}
+              height={415}
+              layout="responsive"
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Image
+              src="/images/grid-6-2-us.png"
+              width={582}
+              height={415}
+              layout="responsive"
+            />
+          </Grid>
+        </Grid>
       </Box>
 
       <Container>
