@@ -1,5 +1,6 @@
 import SimpleImageSlider from "react-simple-image-slider";
 import { Slide } from "react-slideshow-image";
+import { useRouter } from "next/router";
 import {
   TextField,
   Box,
@@ -9,6 +10,7 @@ import {
   Grid,
 } from "@mui/material";
 export default function Home() {
+  const router = useRouter();
   const slideImages = [
     {
       url: "/images/SlidersHome/slide_one.png",
@@ -50,7 +52,7 @@ export default function Home() {
               </Typography>
             </Box>
             <Box mt={3}>
-              <Button variant="outlined">
+              <Button variant="outlined" onClick={() => router.push("/donate")}>
                 <span
                   style={{
                     color: "#fff",
