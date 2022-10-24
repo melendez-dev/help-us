@@ -1,4 +1,49 @@
 // common icons
+
+export const IconCloseMenu = ({
+  width = 16,
+  height = 16,
+  color = "#434343",
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill={color}
+        d="M2.121 14.85 14.85 2.12A1 1 0 1 0 13.435.707L.707 13.435a1 1 0 0 0 1.414 1.414Z"
+      />
+      <path
+        fill="#434343"
+        d="m.707 2.263 12.728 12.728a1 1 0 0 0 1.414-1.414L2.121.85A1 1 0 0 0 .707 2.263Z"
+      />
+    </svg>
+  );
+};
+export const IconOpenMenu = ({
+  width = 20,
+  height = 12,
+  color = "#434343",
+}) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+      viewBox="0 0 20 12"
+    >
+      <path
+        fill={color}
+        d="M1 2h18a1 1 0 1 0 0-2H1a1 1 0 0 0 0 2Zm18 8H1a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H1a1 1 0 0 0 0 2h18a1 1 0 1 0 0-2Z"
+      />
+    </svg>
+  );
+};
 export const IconCloseQuote = ({
   width = 18,
   height = 30,
