@@ -7,6 +7,7 @@ import {
   IconLinkedin,
 } from "../../../assest/icons/config";
 import Link from "next/link";
+
 export default function Footer() {
   const router = useRouter();
   return (
