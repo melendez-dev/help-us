@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 import {
   TextField,
   Box,
@@ -24,8 +25,13 @@ export default function ContactUs() {
     e.preventDefault();
     try {
       await axios.post("/api/contact", info);
-      // clear form
-      setInfo({});
+      Swal.fire({
+        icon: "success",
+        title: "Enviado con exito",
+        timer: 2000,
+      });
+
+      // clear handleChange
     } catch (error) {
       console.log(error);
     }
