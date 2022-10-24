@@ -183,7 +183,7 @@ export default function WhatDo() {
                     marginRight: "10px",
                   }}
                 >
-                  <IconArrowRight color="black" />
+                  <IconArrowRight />
                 </Box>
                 <Box
                   style={{
@@ -222,7 +222,12 @@ export default function WhatDo() {
                 }}
               >
                 <Box>
-                  <Box>
+                  <Box
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
                     <img
                       src="/images/testimonial.png"
                       width={189}

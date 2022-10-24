@@ -66,7 +66,7 @@ export default function Home() {
         </Grid>
       </Box>
 
-      <Slide duration={4000}>
+      <Slide duration={4000} autoplay>
         {slideImages.map((slideImage, index) => (
           <div className="each-slide" key={index}>
             <div

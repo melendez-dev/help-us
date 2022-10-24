@@ -13,6 +13,7 @@ export default function Footer() {
     <Box
       style={{
         backgroundColor: "#434343",
+        padding: "20px 0",
       }}
     >
       <Container>
@@ -52,6 +53,7 @@ export default function Footer() {
                   display: "flex",
                   justifyContent: "center",
                 }}
+                mt={1}
               >
                 <IconInstagram />
                 <IconFaebook />
@@ -74,26 +76,34 @@ export default function Footer() {
                 cursor: "pointer",
               }}
             >
-              <Link href="/what-do">
-                <Typography variant="p-small" color="error">
-                  ¿Qué hacemos?
-                </Typography>
-              </Link>
-              <Link href="/about-us">
-                <Typography variant="p-small" color="error">
-                  ¿Quiénes somos?
-                </Typography>
-              </Link>
-              <Link href="/request">
-                <Typography variant="p-small" color="error">
-                  Solicitud RTE
-                </Typography>
-              </Link>
-              <Link href="/contact-us">
-                <Typography variant="p-small" color="error">
-                  Contácto
-                </Typography>
-              </Link>
+              <Box>
+                <Link href="/what-do">
+                  <Typography variant="p-small" color="error">
+                    ¿Qué hacemos?
+                  </Typography>
+                </Link>
+              </Box>
+              <Box mt="2px">
+                <Link href="/about-us">
+                  <Typography variant="p-small" color="error">
+                    ¿Quiénes somos?
+                  </Typography>
+                </Link>
+              </Box>
+              <Box mt="4px">
+                <Link href="/request">
+                  <Typography variant="p-small" color="error">
+                    Solicitud RTE
+                  </Typography>
+                </Link>
+              </Box>
+              <Box mt="2px">
+                <Link href="/contact-us">
+                  <Typography variant="p-small" color="error">
+                    Contácto
+                  </Typography>
+                </Link>
+              </Box>
             </Box>
           </Grid>
           <Grid item xs={4}>
@@ -101,6 +111,8 @@ export default function Footer() {
               style={{
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
               }}
             >
               <Button
@@ -111,6 +123,7 @@ export default function Footer() {
                 <span
                   style={{
                     color: "#fff",
+                    fontSize: "12px",
                   }}
                 >
                   Cambiar una vida
@@ -149,9 +162,17 @@ export default function Footer() {
               textAlign: "center",
             }}
           >
-            <Typography variant="p-small" color="error">
-              Términos de uso
-            </Typography>
+            <Link href="/politices">
+              <Typography
+                variant="p-small"
+                color="error"
+                style={{
+                  cursor: "pointer",
+                }}
+              >
+                Términos de uso
+              </Typography>
+            </Link>
           </Grid>
           <Grid
             item
