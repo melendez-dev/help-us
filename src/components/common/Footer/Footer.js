@@ -7,8 +7,11 @@ import {
   IconLinkedin,
 } from "../../../assest/icons/config";
 import Link from "next/link";
+// redux
+import { useSelector } from "react-redux";
 export default function Footer() {
   const router = useRouter();
+  const movil = useSelector((state) => state.movil.value);
   return (
     <Box
       style={{
@@ -21,24 +24,30 @@ export default function Footer() {
           container
           style={{
             padding: "24px 0px",
+            display: "flex",
           }}
         >
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <Box
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: movil ? "row" : "column",
+                alignItems: movil ? "center" : undefined,
+                justifyContent: movil ? "center" : undefined,
               }}
+              mt={movil ? 2 : 0}
+              mb={movil ? 2 : 0}
             >
               <Box
                 style={{
                   display: "flex",
                   justifyContent: "center",
                 }}
+                mr={movil ? 3 : 0}
               >
                 <Link href="/">
                   <Typography
-                    variant="logo"
+                    variant={movil ? "logo-small" : "logo"}
                     color="primary"
                     style={{
                       cursor: "pointer",
@@ -63,7 +72,8 @@ export default function Footer() {
           </Grid>
           <Grid
             item
-            xs={4}
+            xs={6}
+            md={4}
             style={{
               display: "flex",
               justifyContent: "center",
@@ -74,6 +84,8 @@ export default function Footer() {
                 display: "flex",
                 flexDirection: "column",
                 cursor: "pointer",
+                borderRight: movil ? "1px solid #fff" : undefined,
+                width: movil ? "80%" : undefined,
               }}
             >
               <Box>
@@ -106,7 +118,14 @@ export default function Footer() {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            style={{
+              order: movil ? -1 : undefined,
+            }}
+          >
             <Box
               style={{
                 display: "flex",
@@ -131,14 +150,17 @@ export default function Footer() {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={12}>
-            <Box mt={2} mb={2}>
-              <hr />
-            </Box>
-          </Grid>
+          {!movil && (
+            <Grid item xs={12}>
+              <Box mt={2} mb={2}>
+                <hr />
+              </Box>
+            </Grid>
+          )}
+
           <Grid
             item
-            xs={3}
+            xs={6}
             style={{
               textAlign: "center",
             }}
@@ -154,48 +176,90 @@ export default function Footer() {
                 Política de privacidad
               </Typography>
             </Link>
+            {movil && (
+              <>
+                <Box>
+                  <Link href="/politices">
+                    <Typography
+                      variant="p-small"
+                      color="error"
+                      style={{
+                        cursor: "pointer",
+                      }}
+                    >
+                      Términos de uso
+                    </Typography>
+                  </Link>
+                </Box>
+                <Box>
+                  <Typography variant="p-small" color="error">
+                    Desarrollado Vélez Desing
+                  </Typography>
+                </Box>
+              </>
+            )}
           </Grid>
-          <Grid
-            item
-            xs={3}
-            style={{
-              textAlign: "center",
-            }}
-          >
-            <Link href="/politices">
-              <Typography
-                variant="p-small"
-                color="error"
+          {movil && (
+            <Grid item xs={12}>
+              <Box
                 style={{
-                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+                mt={2}
+              >
+                <Typography variant="p-small" color="error">
+                  © 2021 Ayudemos
+                </Typography>
+              </Box>
+            </Grid>
+          )}
+
+          {!movil && (
+            <>
+              <Grid
+                item
+                xs={3}
+                style={{
+                  textAlign: "center",
                 }}
               >
-                Términos de uso
-              </Typography>
-            </Link>
-          </Grid>
-          <Grid
-            item
-            xs={3}
-            style={{
-              textAlign: "center",
-            }}
-          >
-            <Typography variant="p-small" color="error">
-              Desarrollado Vélez Desing
-            </Typography>
-          </Grid>
-          <Grid
-            item
-            xs={3}
-            style={{
-              textAlign: "center",
-            }}
-          >
-            <Typography variant="p-small" color="error">
-              © 2021 Ayudemos
-            </Typography>
-          </Grid>
+                <Link href="/politices">
+                  <Typography
+                    variant="p-small"
+                    color="error"
+                    style={{
+                      cursor: "pointer",
+                    }}
+                  >
+                    Términos de uso
+                  </Typography>
+                </Link>
+              </Grid>
+              <Grid
+                item
+                xs={3}
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <Typography variant="p-small" color="error">
+                  Desarrollado Vélez Desing
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={3}
+                style={{
+                  textAlign: "center",
+                }}
+              >
+                <Typography variant="p-small" color="error">
+                  © 2021 Ayudemos
+                </Typography>
+              </Grid>
+            </>
+          )}
         </Grid>
       </Container>
     </Box>
