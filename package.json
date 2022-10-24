@@ -1,7 +1,7 @@
 {
   "name": "help-us",
   "author": "melendez-dev and Santylol1",
-	"homepage": "https://ayudemos.website/",
+  "homepage": "https://ayudemos.website/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,13 +18,15 @@
     "emailjs": "^4.0.1",
     "framer-motion": "^7.5.3",
     "google-map-react": "^2.2.0",
+    "mysql": "^2.18.1",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.37.0",
     "react-player": "^2.11.0",
     "react-simple-image-slider": "^2.4.1",
-    "react-slideshow-image": "^4.0.5"
+    "react-slideshow-image": "^4.0.5",
+    "uuid-int": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",
