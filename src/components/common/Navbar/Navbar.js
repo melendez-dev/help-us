@@ -117,7 +117,8 @@ export default function Navbar() {
                       position: "absolute",
                       height: "calc(100vh - 90px)",
                       // put left but not out of the screen
-                      left: "calc(25% - 150px)",
+                      // open from the right to the left
+                      right: "calc(100% - 108.7%)",
                     }}
                   >
                     <motion.div
