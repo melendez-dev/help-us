@@ -12,7 +12,12 @@ import {
 } from "@mui/material";
 // icons
 import { IconCustomWhatsapp } from "../../../assest/icons/config";
+
+// redux
+import { useSelector } from "react-redux";
+
 export default function ContactUs() {
+  const movil = useSelector((state) => state.movil.value);
   const [info, setInfo] = useState({});
   const handleChange = (e) => {
     setInfo({
@@ -37,11 +42,13 @@ export default function ContactUs() {
     }
   };
 
+  const CustomeContainer = movil ? Container : Box;
+
   return (
     <Box
       style={{
-        backgroundColor: "#FFF",
-        padding: "50px 0",
+        backgroundColor: movil ? "#f3f3f3" : "#FFF",
+        padding: movil ? "20px 0" : "50px 0",
       }}
     >
       <Container>
@@ -55,8 +62,8 @@ export default function ContactUs() {
               marginBottom: "50px",
             }}
           >
-            <Typography variant="h1-bold" color="#434343">
-              ¿CÓMO PODEMOS AYUDARTE?
+            <Typography variant={movil ? "h3-bold" : "h1-bold"} color="#434343">
+              {movil ? "¿Cómo podemos ayudarte?" : "¿CÓMO PODEMOS AYUDARTE?"}
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -74,8 +81,8 @@ export default function ContactUs() {
                   display: "flex",
                   height: "100%",
                   position: "relative",
-                  right: "-10%",
-                  top: "-4%",
+                  right: movil ? undefined : "-10%",
+                  top: movil ? undefined : "-4%",
                 }}
               >
                 <IconCustomWhatsapp />
@@ -83,106 +90,110 @@ export default function ContactUs() {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <form onSubmit={onSubmit}>
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <Box>
-                    <Typography variant="h3-bold" color="#434343">
-                      O déjanos tus datos y te llamamos
-                    </Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={12}>
-                  <Box>
-                    <Typography variant="p-small" color="#434343">
-                      Nombre
-                    </Typography>
-                  </Box>
-                  <Box
-                    style={{
-                      width: "100%",
-                    }}
-                  >
-                    <TextField
-                      required
-                      variant="outlined"
+            <CustomeContainer>
+              <form onSubmit={onSubmit}>
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <Box
                       style={{
-                        width: "60%",
+                        textAlign: movil ? "center" : undefined,
                       }}
-                      name="name"
-                      onChange={handleChange}
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12}>
-                  <Box>
-                    <Typography variant="p-small" color="#434343">
-                      Teléfono
-                    </Typography>
-                  </Box>
-                  <Box
-                    style={{
-                      width: "100%",
-                    }}
-                  >
-                    <TextField
-                      required
-                      variant="outlined"
-                      style={{
-                        width: "60%",
-                      }}
-                      name="phone"
-                      onChange={handleChange}
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12}>
-                  <Box>
-                    <Typography variant="p-small" color="#434343">
-                      Correo
-                    </Typography>
-                  </Box>
-                  <Box
-                    style={{
-                      width: "100%",
-                    }}
-                  >
-                    <TextField
-                      required
-                      type="email"
-                      name="email"
-                      variant="outlined"
-                      style={{
-                        width: "60%",
-                      }}
-                      onChange={handleChange}
-                    />
-                  </Box>
-                </Grid>
-                <Grid item xs={12}>
-                  <Box
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      width: "60%",
-                    }}
-                  >
-                    <Button
-                      variant="contained"
-                      style={{
-                        width: "131px",
-                        fotnSize: "13px",
-                        fontWeight: "bold",
-                        textTransform: "capitalize",
-                      }}
-                      type="submit"
                     >
-                      Enviar
-                    </Button>
-                  </Box>
+                      <Typography variant="h3-bold" color="#434343">
+                        O déjanos tus datos y te llamamos
+                      </Typography>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box>
+                      <Typography variant="p-small" color="#434343">
+                        Nombre
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <TextField
+                        required
+                        variant="outlined"
+                        style={{
+                          width: movil ? "100%" : "60%",
+                        }}
+                        name="name"
+                        onChange={handleChange}
+                      />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box>
+                      <Typography variant="p-small" color="#434343">
+                        Teléfono
+                      </Typography>
+                    </Box>
+                    <Box
+                      style={{
+                        width: "100%",
+                      }}
+                    >
+                      <TextField
+                        required
+                        variant="outlined"
+                        style={{
+                          width: movil ? "100%" : "60%",
+                        }}
+                        name="phone"
+                        onChange={handleChange}
+                      />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box>
+                      <Typography variant="p-small" color="#434343">
+                        Correo
+                      </Typography>
+                    </Box>
+                    <Box
+                      style={{
+                        width: "100%",
+                      }}
+                    >
+                      <TextField
+                        required
+                        type="email"
+                        name="email"
+                        variant="outlined"
+                        style={{
+                          width: movil ? "100%" : "60%",
+                        }}
+                        onChange={handleChange}
+                      />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Box
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        width: movil ? "100%" : "60%",
+                      }}
+                      mb={movil ? 4 : 0}
+                      mt={movil ? 1 : 0}
+                    >
+                      <Button
+                        variant="contained"
+                        style={{
+                          width: "131px",
+                          fotnSize: "13px",
+                          fontWeight: "bold",
+                          textTransform: "capitalize",
+                        }}
+                        type="submit"
+                      >
+                        Enviar
+                      </Button>
+                    </Box>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </form>
+              </form>
+            </CustomeContainer>
           </Grid>
         </Grid>
       </Container>
