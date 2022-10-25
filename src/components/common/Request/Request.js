@@ -35,6 +35,7 @@ export default function Request() {
                     layout="responsive"
                     width={727}
                     height={636}
+                    alt="slider"
                   />
                 </div>
               </div>
