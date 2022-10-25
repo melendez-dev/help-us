@@ -1,11 +1,13 @@
 import { Box, Typography } from "@mui/material";
+// redux
+import { useSelector } from "react-redux";
 export default function TextLine({ text, color, fontColor = "#fff" }) {
-  console.log("fontColor", fontColor);
+  const movil = useSelector((state) => state.movil.value);
   return (
     <Box
       mt={5}
       style={{
-        display: "flex",
+        display: movil ? undefined : "flex",
         alignItems: "center",
         width: "100%",
       }}
@@ -14,21 +16,27 @@ export default function TextLine({ text, color, fontColor = "#fff" }) {
         style={{
           backgroundColor: color,
           padding: "10px",
+          textAlign: movil ? "center" : undefined,
         }}
       >
-        <Typography variant="h2-bold" color={fontColor} style={{}}>
+        <Typography
+          variant={movil ? "h3-bold" : "h2-bold"}
+          color={fontColor}
+        >
           {text}
         </Typography>
       </Box>
-      <Box
-        style={{
-          height: "5px",
-          backgroundColor: color,
-          marginLeft: "20px",
-          // take the rest width
-          flex: 1,
-        }}
-      ></Box>
+      {!movil && (
+        <Box
+          style={{
+            height: "5px",
+            backgroundColor: color,
+            marginLeft: "20px",
+            // take the rest width
+            flex: 1,
+          }}
+        />
+      )}
     </Box>
   );
 }

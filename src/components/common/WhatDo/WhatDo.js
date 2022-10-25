@@ -35,7 +35,11 @@ import ReactPlayer from "react-player";
 import TextLine from "../../shared/TextLine/TextLine";
 import Image from "next/image";
 
+// redux
+import { useSelector } from "react-redux";
+
 export default function WhatDo() {
+  const movil = useSelector((state) => state.movil.value);
   return (
     <Box>
       <div
@@ -47,54 +51,93 @@ export default function WhatDo() {
           position: "relative",
         }}
       >
-        <Container>
-          <Box
-            style={{
-              position: "absolute",
-              top: "25%",
-            }}
-          >
-            <Box>
-              <Typography variant="h2-bold" color="secondary">
-                Juntos{" "}
-                <span
-                  style={{
-                    fontWeight: 900,
-                  }}
-                >
-                  podemos <br />
-                  construir sueños
-                </span>
-              </Typography>
+        {!movil && (
+          <Container>
+            <Box
+              style={{
+                position: "absolute",
+                top: "25%",
+              }}
+            >
+              <Box>
+                <Typography variant="h2-bold" color="secondary">
+                  Juntos{" "}
+                  <span
+                    style={{
+                      fontWeight: 900,
+                    }}
+                  >
+                    podemos <br />
+                    construir sueños
+                  </span>
+                </Typography>
+              </Box>
+              <Box mt={2}>
+                <Typography variant="p" color="secondary">
+                  Nuestro principal proyecto es acercar a las <br /> familias
+                  más vulnerables del barrio “las Flores” a una vivienda <br />
+                  digna. Buscamos dar respuesta al déficit habitacional <br />
+                  originado por la situación de pobreza que afecta a esta <br />
+                  población en Barranquilla, Colombia.
+                </Typography>
+              </Box>
             </Box>
-            <Box mt={2}>
-              <Typography variant="p" color="secondary">
-                Nuestro principal proyecto es acercar a las <br /> familias más
-                vulnerables del barrio “las Flores” a una vivienda <br />
-                digna. Buscamos dar respuesta al déficit habitacional <br />
-                originado por la situación de pobreza que afecta a esta <br />
-                población en Barranquilla, Colombia.
-              </Typography>
-            </Box>
-          </Box>
-        </Container>
+          </Container>
+        )}
       </div>
+      {movil && (
+        <Box
+          style={{
+            background: "#f3f3f3",
+            padding: "24px",
+          }}
+        >
+          <Container>
+            <Box>
+              <Box>
+                <Typography variant="h2-bold" color="secondary">
+                  Juntos{" "}
+                  <span
+                    style={{
+                      fontWeight: 900,
+                    }}
+                  >
+                    podemos <br />
+                    construir sueños
+                  </span>
+                </Typography>
+              </Box>
+              <Box mt={2}>
+                <Typography variant="p" color="secondary">
+                  Nuestro principal proyecto es acercar a las familias más
+                  vulnerables del barrio “las Flores” a una vivienda digna.
+                  Buscamos dar respuesta al déficit habitacional originado por
+                  la situación de pobreza que afecta a esta población en
+                  Barranquilla, Colombia.
+                </Typography>
+              </Box>
+            </Box>
+          </Container>
+        </Box>
+      )}
+
       <Card
         style={{
           background: "#D8705D",
-          height: "296px",
+          height: movil ? "100%" : "296px",
           position: "relative",
           display: "flex",
           flexDirection: "row",
           textAlign: "center",
           alignItems: "center",
+          padding: movil ? "24px" : undefined,
         }}
       >
         <Container>
           <Grid container spacing="1">
-            <Grid item xs="4">
+            <Grid item xs={12} md={4}>
               <Box>
-                <Typography variant="h1" color="#f3f3f3">
+                <Typography variant="h1-bold" color="#f3f3f3">
                   IMPACTO
                 </Typography>
               </Box>
@@ -105,35 +148,39 @@ export default function WhatDo() {
               </Box>
             </Grid>
 
-            <Grid item xs="4">
-              <Box>
-                <IconHouse />
-              </Box>
-              <Box>
-                <Typography variant="h1-bold" color="#f3f3f3">
-                  52
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="p" color="#f3f3f3">
-                  Casas construidas y donadas
-                </Typography>
+            <Grid item xs={12} md={4}>
+              <Box mt={movil ? 4 : 0}>
+                <Box>
+                  <IconHouse />
+                </Box>
+                <Box>
+                  <Typography variant="h1-bold" color="#f3f3f3">
+                    52
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="p" color="#f3f3f3">
+                    Casas construidas y donadas
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
 
-            <Grid item xs="4">
-              <Box>
-                <IconLove />
-              </Box>
-              <Box>
-                <Typography variant="h1-bold" color="#f3f3f3">
-                  322
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="p" color="#f3f3f3">
-                  Familias con un nuevo hogar
-                </Typography>
+            <Grid item xs={12} md={4}>
+              <Box mt={movil ? 4 : 0}>
+                <Box>
+                  <IconLove />
+                </Box>
+                <Box>
+                  <Typography variant="h1-bold" color="#f3f3f3">
+                    322
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="p" color="#f3f3f3">
+                    Familias con un nuevo hogar
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
           </Grid>
@@ -150,8 +197,11 @@ export default function WhatDo() {
           mt={5}
           mb={5}
         >
-          <video controls>
-            <source src="/videos/video-what-do.mp4" />
+          <video controls width={movil ? "100%" : undefined}>
+            <source
+              src="/videos/video-what-do.mp4"
+              width={movil ? "100%" : undefined}
+            />
           </video>
         </Box>
       </Container>
@@ -175,51 +225,60 @@ export default function WhatDo() {
                   height: "100%",
                 }}
               >
-                <Box
-                  style={{
-                    // 180 grades icon
-                    transform: "rotate(180deg)",
-                    alignSelf: "center",
-                    marginRight: "10px",
-                  }}
-                >
-                  <IconArrowRight />
-                </Box>
+                {!movil && (
+                  <Box
+                    style={{
+                      // 180 grades icon
+                      transform: "rotate(180deg)",
+                      alignSelf: "center",
+                      marginRight: "10px",
+                    }}
+                  >
+                    <IconArrowRight />
+                  </Box>
+                )}
+
                 <Box
                   style={{
                     display: "flex",
                   }}
                 >
-                  <Box>
-                    <IconOpenQuote />
-                  </Box>
+                  {!movil && (
+                    <Box>
+                      <IconOpenQuote />
+                    </Box>
+                  )}
+
                   <Box
                     style={{
                       padding: "0 20px",
                     }}
                   >
-                    <Typography variant="h3-bold">
-                      En mi casa anterior se me metía el agua y no teníamos
-                      baño, esta ayuda no solo me beneficia a mí, también al
-                      barrio.
+                    <Typography variant={movil ? "p" : "h3-bold"}>
+                      {movil && " '' "}En mi casa anterior se me metía el agua y
+                      no teníamos baño, esta ayuda no solo me beneficia a mí,
+                      también al barrio. {movil && " '' "}
                     </Typography>
                   </Box>
-                  <Box
-                    style={{
-                      alignSelf: "end",
-                    }}
-                  >
-                    <IconOpenQuote />
-                  </Box>
+                  {!movil && (
+                    <Box
+                      style={{
+                        alignSelf: "end",
+                      }}
+                    >
+                      <IconOpenQuote />
+                    </Box>
+                  )}
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
               <Box
                 style={{
                   display: "flex",
                   justifyContent: "center",
                 }}
+                mt={movil ? 4 : 0}
               >
                 <Box>
                   <Box
@@ -231,27 +290,32 @@ export default function WhatDo() {
                     <Image
                       src="/images/testimonial.png"
                       width={189}
-											height={160}
-											alt="testimonial"
+                      height={160}
+                      alt="testimonial"
                     />
                   </Box>
-                  <Box mt={1}>
-                    <Typography variant="p" color="#434343">
+                  <Box mt={movil ? 3 : 1}>
+                    <Typography
+                      variant={movil ? "p-small" : "p"}
+                      color="#434343"
+                    >
                       Carmen Cecilia Jiménez, madre <br />
                       beneficiaria de barrio las flores
                     </Typography>
                   </Box>
                 </Box>
-                <Box
-                  ml="4%"
-                  style={{
-                    transform: "rotate(180)",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <IconArrowRight />
-                </Box>
+                {!movil && (
+                  <Box
+                    ml="4%"
+                    style={{
+                      transform: "rotate(180)",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <IconArrowRight />
+                  </Box>
+                )}
               </Box>
             </Grid>
           </Grid>
@@ -259,8 +323,8 @@ export default function WhatDo() {
       </Container>
       <Box
         style={{
-          backgroundColor: "#F3F3F3",
-          padding: "50px",
+          backgroundColor: movil ? "#fff" : "#F3F3F3",
+          padding: movil ? "0px 0px" : "50px",
         }}
       >
         <Container marginY={6}>
@@ -269,7 +333,7 @@ export default function WhatDo() {
             <TextLine text="Líneas de acción" color="#D8705D" />
           </Box>
 
-          <Box marginY={6}>
+          <Box marginY={movil ? 3 : 6}>
             <Typography variant="p" color="secondary" fontColor="#fff">
               La vivienda, un derecho humano. Ayudemos se enfoca en el derecho a
               la vivienda, como clave para la consecución de los Objetivos de
@@ -287,62 +351,66 @@ export default function WhatDo() {
             </Typography>
           </Box>
 
-          <CardWithIcon
-            title="ODS 1: FIN DE LA POBREZA"
-            icon={<IconFamily />}
-            desc="La vivienda supone el mayor impacto en el coste de la vida de las ciudades, además de ser la principal dimensión que explica la exclusión social junto al empleo."
-            background="#D33C42"
-            height="144px"
-          />
-          <CardWithIcon
-            title="ODS 3: SALUD Y BIENESTAR"
-            icon={<IconHealt />}
-            desc="Una vivienda en mal estado o la falta de la misma afecta a la salud física, mental y social de las personas, con especial impacto en la población en situación de mayor vulnerabilidad, como en infancia y en personas mayores."
-            background="#629D47"
-            height="168px"
-          />
-          <CardWithIcon
-            title="ODS 4: EDUCACIÓN DE CALIDAD"
-            icon={<IconBook />}
-            desc="Una vivienda adecuada, independiente y que disponga de espacios para el estudio es clave para el desempeño escolar."
-            background="#B52F34"
-            height="120px"
-          />
-          <CardWithIcon
-            title="ODS 5: IGUALDAD DE GÉNERO"
-            icon={<IconSex />}
-            desc="La exclusión residencial y los problemas de vivienda, como los desalojos, afectan en mayor medida a las mujeres, siendo especialmente relevante el impacto en las mujeres solas con hijos/as."
-            background="#EB4D34"
-            height="168px"
-          />
-          <CardWithIcon
-            title="ODS 7: ENERGÍA ASEQUIBLE Y NO CONTAMINANTE"
-            icon={<IconEnergy />}
-            desc="La pobreza energética es una de las dimensiones de la exclusión residencial y que afecta en mayor medida a los pagos de la vivienda, con una prevalencia mayor en grupos vulnerables."
-            background="#E4AD14"
-            height="144px"
-          />
-          <CardWithIcon
-            title="ODS 10: REDUCCIÓN DE LAS DESIGUALDADES"
-            icon={<IconJudge />}
-            desc="La falta de vivienda es uno de los factores que más influye en la transmisión intergeneracional de la pobreza, al ser el patrimonio inmobiliario clave en la desigualdad de rentas."
-            background="#CB3167"
-            height="144px"
-          />
-          <CardWithIcon
-            title="ODS 11: CIUDADES Y COMUNIDADES SOSTENIBLES"
-            icon={<IconBuilding />}
-            desc="La falta de viviendas asequibles y adecuadas está detrás de gran parte de los problemas de exclusión residencial. Es necesaria la provisión de vivienda social y asequible para conseguir asegurar el acceso a una casa a todas las personas."
-            background="#DD9847"
-            height="168px"
-          />
+          {!movil && (
+            <>
+              <CardWithIcon
+                title="ODS 1: FIN DE LA POBREZA"
+                icon={<IconFamily />}
+                desc="La vivienda supone el mayor impacto en el coste de la vida de las ciudades, además de ser la principal dimensión que explica la exclusión social junto al empleo."
+                background="#D33C42"
+                height="144px"
+              />
+              <CardWithIcon
+                title="ODS 3: SALUD Y BIENESTAR"
+                icon={<IconHealt />}
+                desc="Una vivienda en mal estado o la falta de la misma afecta a la salud física, mental y social de las personas, con especial impacto en la población en situación de mayor vulnerabilidad, como en infancia y en personas mayores."
+                background="#629D47"
+                height="168px"
+              />
+              <CardWithIcon
+                title="ODS 4: EDUCACIÓN DE CALIDAD"
+                icon={<IconBook />}
+                desc="Una vivienda adecuada, independiente y que disponga de espacios para el estudio es clave para el desempeño escolar."
+                background="#B52F34"
+                height="120px"
+              />
+              <CardWithIcon
+                title="ODS 5: IGUALDAD DE GÉNERO"
+                icon={<IconSex />}
+                desc="La exclusión residencial y los problemas de vivienda, como los desalojos, afectan en mayor medida a las mujeres, siendo especialmente relevante el impacto en las mujeres solas con hijos/as."
+                background="#EB4D34"
+                height="168px"
+              />
+              <CardWithIcon
+                title="ODS 7: ENERGÍA ASEQUIBLE Y NO CONTAMINANTE"
+                icon={<IconEnergy />}
+                desc="La pobreza energética es una de las dimensiones de la exclusión residencial y que afecta en mayor medida a los pagos de la vivienda, con una prevalencia mayor en grupos vulnerables."
+                background="#E4AD14"
+                height="144px"
+              />
+              <CardWithIcon
+                title="ODS 10: REDUCCIÓN DE LAS DESIGUALDADES"
+                icon={<IconJudge />}
+                desc="La falta de vivienda es uno de los factores que más influye en la transmisión intergeneracional de la pobreza, al ser el patrimonio inmobiliario clave en la desigualdad de rentas."
+                background="#CB3167"
+                height="144px"
+              />
+              <CardWithIcon
+                title="ODS 11: CIUDADES Y COMUNIDADES SOSTENIBLES"
+                icon={<IconBuilding />}
+                desc="La falta de viviendas asequibles y adecuadas está detrás de gran parte de los problemas de exclusión residencial. Es necesaria la provisión de vivienda social y asequible para conseguir asegurar el acceso a una casa a todas las personas."
+                background="#DD9847"
+                height="168px"
+              />
+            </>
+          )}
         </Container>
       </Box>
 
       <Container marginY={6}>
         <Box>
           <TextLine text="Ubicacion del proyecto" color="#D8705D" />
-          <Box marginY={6}>
+          <Box marginY={movil ? 4 : 6}>
             <Typography variant="p" color="#434343">
               52 viviendas intervenidas en el barrio “Las Flores” en la ciudad
               de Barranquilla.
