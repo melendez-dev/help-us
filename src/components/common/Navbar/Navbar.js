@@ -38,7 +38,7 @@ export default function Navbar() {
 
   useLayoutEffect(() => {
     dispatch(setMovil(matches));
-  }, [matches]);
+  }, [matches, dispatch]);
 
   // menu movil with framer motion
   const [open, cycleOpen] = useCycle(false, true);
@@ -155,8 +155,8 @@ export default function Navbar() {
                         </Box>
                         <Divider />
                         {links.map((link, index) => (
-                          <Box mt={2}>
-                            <Link href={link.url} key={index}>
+                          <Box mt={2} key={index}>
+                            <Link href={link.url}>
                               <Typography
                                 variant="p"
                                 color={link?.id === 5 ? "primary" : "secondary"}
