@@ -16,6 +16,7 @@ export default function AboutUs() {
           src="/images/oldest.png"
           width={"1281px"}
           height={"494px"}
+          alt="oldest"
           layout="responsive"
         />
       </Box>
@@ -145,6 +146,7 @@ export default function AboutUs() {
               width={582}
               height={415}
               layout="responsive"
+              alt="gird-6-1-us"
             />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -153,6 +155,7 @@ export default function AboutUs() {
               width={582}
               height={415}
               layout="responsive"
+              alt="grid-6-2-us"
             />
           </Grid>
         </Grid>

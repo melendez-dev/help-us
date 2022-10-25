@@ -228,10 +228,11 @@ export default function WhatDo() {
                       justifyContent: "center",
                     }}
                   >
-                    <img
+                    <Image
                       src="/images/testimonial.png"
                       width={189}
-                      height={160}
+											height={160}
+											alt="testimonial"
                     />
                   </Box>
                   <Box mt={1}>

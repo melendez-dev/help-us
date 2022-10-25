@@ -141,6 +141,7 @@ export default function Donate() {
             width={491}
             height={636}
             layout="responsive"
+            alt="side-donate"
           />
         </Box>
       </Grid>
