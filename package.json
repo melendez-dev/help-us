@@ -1,11 +1,12 @@
 {
   "name": "help-us",
   "author": "melendez-dev and Santylol1",
+  "homepage": "https://ayudemos.website/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,17 +14,22 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.8",
+    "@reduxjs/toolkit": "^1.8.6",
     "axios": "^1.1.2",
     "emailjs": "^4.0.1",
     "framer-motion": "^7.5.3",
     "google-map-react": "^2.2.0",
+    "mysql": "^2.18.1",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.37.0",
     "react-player": "^2.11.0",
+    "react-redux": "^8.0.4",
     "react-simple-image-slider": "^2.4.1",
-    "react-slideshow-image": "^4.0.5"
+    "react-slideshow-image": "^4.0.5",
+    "sweetalert2": "^11.6.1",
+    "uuid-int": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",

@@ -7,26 +7,26 @@ export default function TextLine({ text, color, fontColor = "#fff" }) {
       style={{
         display: "flex",
         alignItems: "center",
+        width: "100%",
       }}
     >
-      <Box>
-        <Typography
-          variant="h2-bold"
-          color={fontColor}
-          style={{
-            backgroundColor: color,
-            padding: "10px",
-          }}
-        >
+      <Box
+        style={{
+          backgroundColor: color,
+          padding: "10px",
+        }}
+      >
+        <Typography variant="h2-bold" color={fontColor} style={{}}>
           {text}
         </Typography>
       </Box>
       <Box
         style={{
-          width: "60%",
           height: "5px",
           backgroundColor: color,
           marginLeft: "20px",
+          // take the rest width
+          flex: 1,
         }}
       ></Box>
     </Box>
