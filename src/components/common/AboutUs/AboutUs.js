@@ -8,7 +8,13 @@ import {
   Card,
   Grid,
 } from "@mui/material";
+
+// redux
+import { useSelector } from "react-redux";
 export default function AboutUs() {
+  const movil = useSelector((state) => state.movil.value);
+  console.log(movil);
+
   return (
     <Box>
       <Box>
@@ -78,7 +84,17 @@ export default function AboutUs() {
           </Grid>
         </Grid>
       </Container>
-
+      {movil && (
+        <Grid item xs={12} md={0}>
+          <Image
+            src="/images/gird-6-1-us.png"
+            width={582}
+            height={415}
+            layout="responsive"
+            alt="gird-6-1-us"
+          />
+        </Grid>
+      )}
       <Box
         style={{
           background: "#D8705D",
@@ -90,15 +106,18 @@ export default function AboutUs() {
             <Grid item xs={12} md={5}>
               <Box
                 style={{
-                  textAlign: "center",
+                  textAlign: movil ? undefined : "center",
                 }}
               >
-                <Typography variant="h1-bold" color="#f3f3f3">
+                <Typography
+                  variant={movil ? "h2-bold" : "h1-bold"}
+                  color="#f3f3f3"
+                >
                   Misión
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="p" color="#f3f3f3">
+                <Typography variant={movil ? "p-small" : "p"} color="#f3f3f3">
                   Nuestra misión fundamental es a través de la vivienda digna y
                   un ambiente sano contribiur en la meojr de la calidad de vida
                   de las familias que impactamos.
@@ -119,15 +138,19 @@ export default function AboutUs() {
             <Grid item xs={12} md={5}>
               <Box
                 style={{
-                  textAlign: "center",
+                  textAlign: movil ? undefined : "center",
                 }}
+                mt={movil ? 2 : 0}
               >
-                <Typography variant="h1-bold" color="#f3f3f3">
+                <Typography
+                  variant={movil ? "h2-bold" : "h1-bold"}
+                  color="#f3f3f3"
+                >
                   Visión
                 </Typography>
               </Box>
               <Box>
-                <Typography variant="p" color="#f3f3f3">
+                <Typography variant={movil ? "p-small" : "p"} color="#f3f3f3">
                   Nuestra visión es generar impacto con nuestras actuaciones en
                   el bienestar y el desarrollo de la comunidad con la que
                   trabajamos y ser reconocidos por nuestra integridad en el modo
@@ -138,17 +161,19 @@ export default function AboutUs() {
           </Grid>
         </Container>
       </Box>
-      <Box my={3}>
+      <Box my={movil ? 0 : 3}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
-            <Image
-              src="/images/gird-6-1-us.png"
-              width={582}
-              height={415}
-              layout="responsive"
-              alt="gird-6-1-us"
-            />
-          </Grid>
+          {!movil && (
+            <Grid item xs={0} md={6}>
+              <Image
+                src="/images/gird-6-1-us.png"
+                width={582}
+                height={415}
+                layout="responsive"
+                alt="gird-6-1-us"
+              />
+            </Grid>
+          )}
           <Grid item xs={12} md={6}>
             <Image
               src="/images/grid-6-2-us.png"

@@ -10,7 +10,12 @@ import {
 
 // IMAGE
 import Image from "next/image";
+
+// redux
+import { useSelector } from "react-redux";
 export default function Donate() {
+  const movil = useSelector((state) => state.movil.value);
+  const CustomCotainer = movil ? Container : Box;
   return (
     <Grid container>
       <Grid item xs={12} md={7}>
@@ -24,7 +29,9 @@ export default function Donate() {
           <Box
             style={{
               position: "absolute",
-              right: "-7%",
+              right: movil ? undefined : "-7%",
+              left: movil ? "50%" : undefined,
+              transform: movil ? "translate(-50%, 0%)" : undefined,
               top: "18%",
               zIndex: 10,
             }}
@@ -32,14 +39,15 @@ export default function Donate() {
             <Card
               style={{
                 background: "#D8705D",
-                width: "574px",
-                height: "462px",
+                width: movil ? "342px" : "574px",
+                height: movil ? "317px" : "462px",
                 borderRadius: "12px",
+                marginTop: movil ? "10%" : undefined,
               }}
             >
               <Box
                 style={{
-                  padding: "62px",
+                  padding: movil ? "10px" : "62px",
                 }}
               >
                 <Grid container>
@@ -51,30 +59,38 @@ export default function Donate() {
                           justifyContent: "center",
                         }}
                       >
-                        <Typography variant="h2" color="white">
+                        <Typography
+                          variant={movil ? "h3-bold" : "h2"}
+                          color="white"
+                        >
                           Transferencia Bancaria
                         </Typography>
                       </Box>
                       <Box mt={2} style={{ textAlign: "center" }}>
-                        <Typography variant="p" color="white">
-                          ¡Estás a punto de apoyar la construcción de{" "}
-                          <b>un nuevo hogar</b> para quienes más lo necesitan!
-                        </Typography>
+                        <CustomCotainer>
+                          <Typography variant="p" color="white">
+                            ¡Estás a punto de apoyar la construcción de{" "}
+                            <b>un nuevo hogar</b> para quienes más lo necesitan!
+                          </Typography>
+                        </CustomCotainer>
                       </Box>
                     </Box>
                   </Grid>
                   <Grid xs={12}>
                     <Container
                       style={{
-                        padding: "0px 50px",
+                        padding: movil ? "0 50px" : "0px 50px",
                       }}
                     >
-                      <Box mt={6}>
+                      <Box mt={movil ? 2 : 6}>
                         <Typography variant="h3" color="white">
                           Banco Davivienda
                         </Typography>
 
-                        <Typography variant="p-bold" color="white">
+                        <Typography
+                          variant={movil ? "p-small" : "p-bold"}
+                          color="white"
+                        >
                           #### #### #### ####
                         </Typography>
                       </Box>
@@ -122,7 +138,10 @@ export default function Donate() {
                           Banco Bancolombia
                         </Typography>
 
-                        <Typography variant="p-bold" color="white">
+                        <Typography
+                          variant={movil ? "p-small" : "p-bold"}
+                          color="white"
+                        >
                           #### #### #### ####
                         </Typography>
                       </Box>
