@@ -1,4 +1,7 @@
 import { Box, Grid, Typography, Container } from "@mui/material";
+
+// redux
+import { useSelector } from "react-redux";
 export default function CardBox({
   title,
   desc,
@@ -10,6 +13,7 @@ export default function CardBox({
   container = false,
 }) {
   const ComponentCustom = container ? Container : Box;
+  const movil = useSelector((state) => state.movil.value);
   return (
     <Box
       style={{
@@ -30,7 +34,7 @@ export default function CardBox({
               paddingTop: container ? "20px" : undefined,
             }}
           >
-            <Typography variant="h1-bold" color="#D8705D">
+            <Typography variant={movil ? "h3-bold" : "h1-bold"} color="#D8705D">
               {title}
             </Typography>
           </ComponentCustom>
@@ -42,7 +46,7 @@ export default function CardBox({
             marginTop: container ? "10px" : undefined,
           }}
         >
-          <Typography variant="p" color={colorText}>
+          <Typography variant={movil ? "p-small" : "p"} color={colorText}>
             {desc}
           </Typography>
         </ComponentCustom>
