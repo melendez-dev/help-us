@@ -46,7 +46,7 @@ export default function Navbar() {
     { url: "/what-do", name: "¿Qué hacemos?", id: 1 },
     { url: "/about-us", name: "¿Quiénes somos?", id: 2 },
     { url: "/request", name: "Solicitud RTE", id: 3 },
-    { url: "/contact", name: "Contácto", id: 4 },
+    { url: "/contact-us", name: "Contácto", id: 4 },
     { url: "/donate", name: "Donar", id: 5 },
   ];
 
